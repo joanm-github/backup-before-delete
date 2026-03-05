@@ -113,69 +113,36 @@ const initOscilloscope = () => {
 };
 
 const Footer = () => `
-<footer class="mt-auto border-t border-mustard/10 bg-background-dark py-20 px-6 mb-24 md:mb-0 reveal">
-    <div class="max-w-7xl mx-auto">
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-20 mb-20">
-            <!-- Newsletter Section -->
-            <div class="flex flex-col gap-8 p-10 bg-[#1a1613]/40 border border-mustard/10 photo-frame-dark">
-                <div>
-                    <h3 class="text-3xl font-black uppercase text-mustard tracking-tight mb-2">Signal Bulletin</h3>
-                    <p class="text-burnt-orange font-mono text-xs uppercase tracking-[0.2em]">Subscribe for archive updates</p>
-                </div>
-                <form class="flex flex-col sm:flex-row gap-4" onsubmit="event.preventDefault(); alert('Transmission Received. Welcome to the archives.'); this.reset();">
-                    <input type="email" placeholder="ENCODED_ADDRESS@DOMAIN.SYS" required
-                        class="flex-1 bg-background-dark/80 border border-mustard/20 p-4 focus:border-mustard outline-none text-mustard font-mono text-sm uppercase placeholder:text-mustard/20 transition-all">
-                    <button type="submit"
-                        class="bg-mustard text-background-dark px-8 py-4 font-black uppercase tracking-widest text-xs hover:bg-accent transition-all duration-300">
-                        Subscribe
-                    </button>
-                </form>
-                <div class="flex items-center gap-3">
-                    <div class="size-2 bg-accent animate-pulse rounded-full"></div>
-                    <span class="text-[10px] font-mono text-tobacco/50 uppercase tracking-widest">Frequency: Monthly Transmissions</span>
-                </div>
+<footer class="mt-auto border-t border-mustard/10 bg-background-dark py-8 px-6 mb-24 md:mb-0 reveal">
+    <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
+        <!-- Logo & Name -->
+        <a href="index.html" class="flex items-center gap-4 group">
+            <div class="size-10 overflow-hidden rounded-full border border-mustard/30 shadow-lg group-hover:scale-110 transition-transform">
+                <img src="assets/logo.jpg" alt="DreamSequence Logo" class="w-full h-full object-cover">
             </div>
-
-            <!-- Info & Links -->
-            <div class="flex flex-col md:flex-row justify-between gap-12">
-                <div class="flex flex-col gap-6">
-                    <div class="flex items-center gap-4">
-                        <div class="size-12 overflow-hidden rounded-full border border-mustard/30 shadow-xl">
-                            <img src="assets/logo.jpg" alt="DreamSequence Logo" class="w-full h-full object-cover">
-                        </div>
-                        <div class="flex flex-col">
-                            <span class="text-xl font-black tracking-tight text-mustard uppercase leading-none">DreamSequence</span>
-                            <span class="text-[10px] text-burnt-orange font-mono mt-1 uppercase tracking-widest opacity-70">Trieste • Since 1972</span>
-                        </div>
-                    </div>
-                    <p class="text-xs text-tobacco/60 leading-relaxed max-w-xs uppercase font-medium tracking-tight">
-                        Dedicated to the preservation of analog transmissions and the exploration of cosmic frequencies via magnetic tape.
-                    </p>
-                </div>
-
-                <div class="flex flex-col gap-6">
-                    <span class="text-xs font-black text-mustard uppercase tracking-widest">Connect</span>
-                    <div class="flex gap-6">
-                        <a class="text-mustard/40 hover:text-mustard transition-colors" href="https://www.instagram.com/dreamsequence.italia/" target="_blank">
-                            <span class="sr-only">Instagram</span>
-                            <svg class="size-6" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"></path></svg>
-                        </a>
-                        <a class="text-mustard/40 hover:text-mustard transition-colors" href="https://dreamsequence3.bandcamp.com" target="_blank">
-                            <span class="sr-only">Bandcamp</span>
-                            <svg class="size-6" fill="currentColor" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M0 18.75l7.437-13.5H24l-7.438 13.5H0z"></path></svg>
-                        </a>
-                    </div>
-                </div>
+            <div class="flex flex-col">
+                <span class="text-lg font-black tracking-tight text-mustard uppercase leading-none">DreamSequence</span>
+                <span class="text-[8px] text-burnt-orange font-mono mt-1 uppercase tracking-widest opacity-70">Trieste • Since 1972</span>
             </div>
+        </a>
+
+        <!-- Rights & Terminal -->
+        <div class="hidden md:flex flex-col items-center">
+            <p class="text-[9px] text-tobacco/40 uppercase tracking-[0.3em] font-mono">
+                © 2024 DreamSequence Archives • Terminal DS-72
+            </p>
         </div>
 
-        <div class="border-t border-mustard/10 pt-10 flex flex-col md:flex-row justify-between items-center gap-6">
-            <p class="text-[10px] text-tobacco/40 uppercase tracking-[0.3em] font-mono">
-                Terminal ID: DS-72-ARCHIVE-V1.4.2
-            </p>
-            <p class="text-[10px] text-tobacco/40 uppercase tracking-[0.3em] font-mono text-center md:text-right">
-                © 2024 DreamSequence Archives • Frequency Matrix Authorized
-            </p>
+        <!-- Social Links -->
+        <div class="flex items-center gap-6">
+            <a class="text-mustard/60 hover:text-mustard transition-colors" href="https://www.instagram.com/dreamsequence.italia/" target="_blank">
+                <span class="sr-only">Instagram</span>
+                <svg class="size-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"></path></svg>
+            </a>
+            <a class="text-mustard/60 hover:text-mustard transition-colors" href="https://dreamsequence3.bandcamp.com" target="_blank">
+                <span class="sr-only">Bandcamp</span>
+                <svg class="size-5" fill="currentColor" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M0 18.75l7.437-13.5H24l-7.438 13.5H0z"></path></svg>
+            </a>
         </div>
     </div>
 </footer>
