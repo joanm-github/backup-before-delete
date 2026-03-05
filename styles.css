@@ -1,5 +1,37 @@
 /* DreamSequence - Unified Styles */
 
+@keyframes float {
+    0% {
+        transform: translateY(0px) rotate(-1deg);
+    }
+
+    50% {
+        transform: translateY(-10px) rotate(1deg);
+    }
+
+    100% {
+        transform: translateY(0px) rotate(-1deg);
+    }
+}
+
+.float-slow {
+    animation: float 8s ease-in-out infinite;
+}
+
+.grain-pulse {
+    animation: grain-shift 0.2s steps(2) infinite;
+}
+
+@keyframes grain-shift {
+    0% {
+        transform: translate(0, 0);
+    }
+
+    100% {
+        transform: translate(-5%, -5%);
+    }
+}
+
 /* Base Styles */
 body {
     -webkit-font-smoothing: antialiased;

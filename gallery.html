@@ -36,42 +36,43 @@
                 </header>
 
                 <!-- Era 1: 1972 - 1974 -->
-                <section class="mb-20">
-                    <div class="flex items-center gap-4 mb-8">
-                        <h2 class="text-2xl font-bold uppercase tracking-widest text-mustard/80">1972 — 1974</h2>
-                        <div class="h-px flex-1 bg-white/10"></div>
-                        <span class="text-[10px] font-mono text-burnt-orange uppercase">Phase I: Trieste Sessions</span>
+                <section class="mb-32">
+                    <div class="flex items-center gap-4 mb-12">
+                        <h2 class="text-3xl font-black uppercase tracking-[0.2em] text-mustard/90">1972 — 1974</h2>
+                        <div class="h-px flex-1 bg-gradient-to-r from-mustard/30 to-transparent"></div>
+                        <span class="text-xs font-mono text-burnt-orange uppercase tracking-widest">Phase I: Trieste
+                            Sessions</span>
                     </div>
-                    <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4">
-                        <div class="group relative cursor-pointer overflow-hidden photo-frame aspect-square"
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
+                        <div class="group relative cursor-pointer overflow-hidden photo-frame aspect-[4/5] bg-black/20"
                             onclick="showModal('assets/2af12404-fb23-490f-a09b-b21768b307fc.JPG')">
                             <img src="assets/2af12404-fb23-490f-a09b-b21768b307fc.JPG"
-                                class="w-full h-full object-cover grayscale opacity-60 group-hover:opacity-100 group-hover:grayscale-0 transition-all duration-500">
+                                class="w-full h-full object-cover grayscale contrast-125 opacity-70 group-hover:opacity-100 group-hover:grayscale-0 group-hover:scale-110 transition-all duration-700">
+                            <div
+                                class="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-black/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity">
+                                <p class="text-[10px] font-mono text-mustard uppercase tracking-widest">Trieste Studio •
+                                    Recording "Nebbia"</p>
+                            </div>
                         </div>
-                        <div class="group relative cursor-pointer overflow-hidden photo-frame aspect-square"
+                        <div class="group relative cursor-pointer overflow-hidden photo-frame aspect-[4/5] bg-black/20 lg:translate-y-12"
                             onclick="showModal('assets/ba77be7a-c151-4829-94da-861799d7b468.JPG')">
                             <img src="assets/ba77be7a-c151-4829-94da-861799d7b468.JPG"
-                                class="w-full h-full object-cover grayscale opacity-60 group-hover:opacity-100 group-hover:grayscale-0 transition-all duration-500">
+                                class="w-full h-full object-cover grayscale contrast-125 opacity-70 group-hover:opacity-100 group-hover:grayscale-0 group-hover:scale-110 transition-all duration-700">
+                            <div
+                                class="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-black/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity">
+                                <p class="text-[10px] font-mono text-mustard uppercase tracking-widest">Elena's Moog
+                                    Setup • Live Input</p>
+                            </div>
                         </div>
-                        <div class="group relative cursor-pointer overflow-hidden photo-frame aspect-square"
+                        <div class="group relative cursor-pointer overflow-hidden photo-frame aspect-[4/5] bg-black/20"
                             onclick="showModal('assets/691e55f2-0bc4-438b-8d48-ead984704f85.JPG')">
                             <img src="assets/691e55f2-0bc4-438b-8d48-ead984704f85.JPG"
-                                class="w-full h-full object-cover grayscale opacity-60 group-hover:opacity-100 group-hover:grayscale-0 transition-all duration-500">
-                        </div>
-                        <div class="group relative cursor-pointer overflow-hidden photo-frame aspect-square"
-                            onclick="showModal('assets/c6a44725-604e-43aa-baeb-ae759a1f0174.JPG')">
-                            <img src="assets/c6a44725-604e-43aa-baeb-ae759a1f0174.JPG"
-                                class="w-full h-full object-cover grayscale opacity-60 group-hover:opacity-100 group-hover:grayscale-0 transition-all duration-500">
-                        </div>
-                        <div class="group relative cursor-pointer overflow-hidden photo-frame aspect-square"
-                            onclick="showModal('assets/edd5825c-4436-459a-a9ec-d10b9e5bd00c.JPG')">
-                            <img src="assets/edd5825c-4436-459a-a9ec-d10b9e5bd00c.JPG"
-                                class="w-full h-full object-cover grayscale opacity-60 group-hover:opacity-100 group-hover:grayscale-0 transition-all duration-500">
-                        </div>
-                        <div class="group relative cursor-pointer overflow-hidden photo-frame aspect-square"
-                            onclick="showModal('assets/7aa16815-a1d3-47fb-a623-b7d77a1030e3.JPG')">
-                            <img src="assets/7aa16815-a1d3-47fb-a623-b7d77a1030e3.JPG"
-                                class="w-full h-full object-cover grayscale opacity-60 group-hover:opacity-100 group-hover:grayscale-0 transition-all duration-500">
+                                class="w-full h-full object-cover grayscale contrast-125 opacity-70 group-hover:opacity-100 group-hover:grayscale-0 group-hover:scale-110 transition-all duration-700">
+                            <div
+                                class="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-black/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity">
+                                <p class="text-[10px] font-mono text-mustard uppercase tracking-widest">Sofia • Tape
+                                    Loop Experiments</p>
+                            </div>
                         </div>
                     </div>
                 </section>
@@ -114,6 +115,30 @@
     </div>
 
     <script src="components.js"></script>
+    <script>
+        // Use Intersection Observer for scroll-reveal animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('opacity-100', 'translate-y-0');
+                    entry.target.classList.remove('opacity-0', 'translate-y-10');
+                }
+            });
+        }, observerOptions);
+
+        document.addEventListener('DOMContentLoaded', () => {
+            document.querySelectorAll('.photo-frame').forEach((el, index) => {
+                el.classList.add('opacity-0', 'translate-y-10', 'transition-all', 'duration-700');
+                el.style.transitionDelay = `${(index % 6) * 100}ms`;
+                observer.observe(el);
+            });
+        });
+    </script>
 </body>
 
 </html>
