@@ -29,7 +29,7 @@ const Header = () => `
     </div>
     
     <!-- Mobile Menu Overlay -->
-    <div id="mobile-menu" class="fixed inset-0 top-[60px] z-[55] hidden bg-background-dark/95 backdrop-blur-lg lg:hidden animate-in fade-in slide-in-from-top duration-300">
+    <div id="mobile-menu" class="fixed inset-0 top-16 z-[70] hidden bg-[#1a1613]/98 backdrop-blur-xl lg:hidden animate-in fade-in slide-in-from-top-4 duration-300">
         <nav class="flex flex-col items-center justify-center h-full gap-8 p-6">
             <a class="text-2xl font-bold tracking-[0.2em] uppercase text-mustard hover:text-accent transition-colors" href="biography.html" onclick="toggleMobileMenu()">Biography</a>
             <a class="text-2xl font-bold tracking-[0.2em] uppercase text-mustard hover:text-accent transition-colors" href="collection.html" onclick="toggleMobileMenu()">Discography</a>
