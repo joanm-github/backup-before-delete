@@ -25,70 +25,86 @@
 
         <main class="flex-1 py-12 px-6">
             <div class="max-w-4xl mx-auto">
-                <header class="mb-12">
-                    <h1 class="text-4xl md:text-6xl font-black uppercase tracking-tighter text-glow text-mustard">
+                <header class="mb-20 reveal">
+                    <h1
+                        class="text-6xl md:text-8xl font-black uppercase tracking-tighter text-glow text-mustard leading-none">
                         Checkout</h1>
-                    <p class="text-burnt-orange font-mono uppercase text-xs tracking-widest mt-2">Finalize your
-                        transmission selection</p>
+                    <p class="text-burnt-orange font-mono uppercase text-xs tracking-[0.3em] mt-6 opacity-70">Finalize
+                        transmission selection • Terminal Authorization</p>
+                    <div class="h-1 w-32 bg-mustard/30 mt-8"></div>
                 </header>
 
                 <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
                     <!-- Order Summary -->
-                    <div class="order-2 lg:order-1 space-y-8">
-                        <section class="bg-cosmic-black/40 border border-tobacco/30 p-8 rounded-sm">
-                            <h2 class="text-xl font-bold uppercase text-mustard mb-6 border-b border-tobacco/20 pb-4">
-                                Transmission Summary</h2>
-                            <div id="checkout-list" class="space-y-4">
+                    <div class="order-2 lg:order-1 space-y-8 reveal">
+                        <section
+                            class="bg-[#1a1613]/60 border border-mustard/10 p-10 rounded-sm photo-frame-dark shadow-2xl">
+                            <h2
+                                class="text-2xl font-black uppercase text-mustard mb-8 border-b border-mustard/10 pb-6 tracking-tight">
+                                Archive Summary</h2>
+                            <div id="checkout-list" class="space-y-6">
                                 <!-- Cart items will be injected here -->
                             </div>
-                            <div class="mt-8 border-t-2 border-dashed border-tobacco/30 pt-6">
-                                <div class="flex justify-between items-center text-xl font-black uppercase">
-                                    <span>Total Frecuencia</span>
+                            <div class="mt-10 border-t-2 border-dashed border-mustard/20 pt-8">
+                                <div
+                                    class="flex justify-between items-center text-3xl font-black uppercase tracking-tighter">
+                                    <span class="text-mustard">Total Resonance</span>
                                     <span id="checkout-total" class="text-accent text-glow">0.00€</span>
                                 </div>
                             </div>
                         </section>
 
-                        <section class="p-6 border border-burnt-orange/20 bg-burnt-orange/5">
-                            <p class="text-xs text-[#a1887f] uppercase tracking-tighter leading-relaxed">
-                                * All digital signals are delivered via encoded electromagnetic waves. Physical
-                                artifacts are shipped according to local space-time constraints.
-                            </p>
+                        <section class="p-8 border border-burnt-orange/20 bg-burnt-orange/5 photo-frame-dark">
+                            <div class="flex gap-4">
+                                <span class="material-symbols-outlined text-burnt-orange">info</span>
+                                <p class="text-xs text-[#a1887f] uppercase font-mono tracking-widest leading-relaxed">
+                                    * All digital signals are delivered via encoded electromagnetic waves. Physical
+                                    artifacts are shipped according to local space-time constraints and planetary
+                                    transit logs.
+                                </p>
+                            </div>
                         </section>
                     </div>
 
                     <!-- Payment Form -->
-                    <div class="order-1 lg:order-2">
-                        <form id="checkout-form" class="space-y-6">
+                    <div class="order-1 lg:order-2 reveal">
+                        <form id="checkout-form" class="space-y-8">
                             <div class="space-y-4">
-                                <h2 class="text-xs font-mono uppercase text-burnt-orange tracking-[0.3em]">Coordenadas
-                                    de Envío</h2>
-                                <input type="text" placeholder="FULL NAME" required
-                                    class="w-full bg-cosmic-black/60 border border-tobacco p-4 focus:border-mustard outline-none text-mustard font-mono text-sm uppercase">
-                                <input type="email" placeholder="EMAIL ADDRESS" required
-                                    class="w-full bg-cosmic-black/60 border border-tobacco p-4 focus:border-mustard outline-none text-mustard font-mono text-sm uppercase">
+                                <h2 class="text-xs font-mono uppercase text-burnt-orange tracking-[0.4em] font-bold">
+                                    Signal Coordinates</h2>
+                                <div class="space-y-px">
+                                    <input type="text" placeholder="TRANSMISSION RECIPIENT" required
+                                        class="w-full bg-[#1a1613]/60 border border-mustard/20 p-5 focus:border-mustard outline-none text-mustard font-mono text-sm uppercase placeholder:text-mustard/20 transition-all">
+                                    <input type="email" placeholder="ENCODED ADDRESS (EMAIL)" required
+                                        class="w-full bg-[#1a1613]/60 border border-mustard/20 p-5 focus:border-mustard outline-none text-mustard font-mono text-sm uppercase placeholder:text-mustard/20 transition-all">
+                                </div>
                             </div>
 
-                            <div class="space-y-4 pt-4">
-                                <h2 class="text-xs font-mono uppercase text-burnt-orange tracking-[0.3em]">Payment
-                                    Signal</h2>
-                                <div class="relative">
-                                    <input type="text" placeholder="CARD NUMBER" required
-                                        class="w-full bg-cosmic-black/60 border border-tobacco p-4 focus:border-mustard outline-none text-mustard font-mono text-sm uppercase">
-                                    <span
-                                        class="absolute right-4 top-1/2 -translate-y-1/2 material-symbols-outlined text-tobacco/50">credit_card</span>
-                                </div>
-                                <div class="flex gap-4">
-                                    <input type="text" placeholder="MM/YY" required
-                                        class="w-1/2 bg-cosmic-black/60 border border-tobacco p-4 focus:border-mustard outline-none text-mustard font-mono text-sm uppercase">
-                                    <input type="text" placeholder="CVV" required
-                                        class="w-1/2 bg-cosmic-black/60 border border-tobacco p-4 focus:border-mustard outline-none text-mustard font-mono text-sm uppercase">
+                            <div class="space-y-4 pt-6">
+                                <h2 class="text-xs font-mono uppercase text-burnt-orange tracking-[0.4em] font-bold">
+                                    Authorization Signal</h2>
+                                <div class="space-y-px">
+                                    <div class="relative">
+                                        <input type="text" placeholder="CREDENTIAL NUMBER" required
+                                            class="w-full bg-[#1a1613]/60 border border-mustard/20 p-5 focus:border-mustard outline-none text-mustard font-mono text-sm uppercase placeholder:text-mustard/20 transition-all">
+                                        <span
+                                            class="absolute right-6 top-1/2 -translate-y-1/2 material-symbols-outlined text-mustard/30">credit_card</span>
+                                    </div>
+                                    <div class="flex gap-px">
+                                        <input type="text" placeholder="MM / YY" required
+                                            class="w-1/2 bg-[#1a1613]/60 border border-mustard/20 p-5 focus:border-mustard outline-none text-mustard font-mono text-sm uppercase placeholder:text-mustard/20 transition-all">
+                                        <input type="text" placeholder="CVV" required
+                                            class="w-1/2 bg-[#1a1613]/60 border border-mustard/20 p-5 focus:border-mustard outline-none text-mustard font-mono text-sm uppercase placeholder:text-mustard/20 transition-all">
+                                    </div>
                                 </div>
                             </div>
 
                             <button type="submit"
-                                class="w-full bg-mustard text-background-dark py-6 font-black uppercase tracking-[0.2em] text-lg hover:bg-accent transition-all shadow-[0_0_20px_rgba(214,158,46,0.3)] hover:-translate-y-1 active:translate-y-0 animate-signal-pulse">
-                                Transmit Payment
+                                class="w-full bg-mustard text-background-dark py-8 font-black uppercase tracking-[0.3em] text-sm hover:bg-accent transition-all shadow-[0_0_40px_rgba(214,158,46,0.2)] hover:-translate-y-1 active:translate-y-0 relative overflow-hidden group">
+                                <span class="relative z-10">Authorize Transmission</span>
+                                <div
+                                    class="absolute inset-0 bg-white/20 translate-y-full group-hover:translate-y-0 transition-transform duration-500">
+                                </div>
                             </button>
                         </form>
                     </div>
@@ -123,18 +139,21 @@
             list.innerHTML = cartItems.map((item, idx) => {
                 total += item.price;
                 return `
-                    <div class="flex items-center gap-4 group">
-                        <div class="size-12 rounded-sm overflow-hidden border border-tobacco/30">
-                            <img src="${item.img}" class="w-full h-full object-cover">
+                    <div class="flex items-center gap-6 group hover:bg-white/5 p-2 transition-colors rounded-sm">
+                        <div class="size-20 rounded-sm overflow-hidden border border-mustard/20 photo-frame-dark flex-shrink-0">
+                            <img src="${item.img}" class="w-full h-full object-cover grayscale-[0.3] group-hover:grayscale-0 transition-all duration-500">
                         </div>
-                        <div class="flex-1">
-                            <h3 class="text-sm font-bold uppercase text-slate-200">${item.name}</h3>
-                            <p class="text-[10px] text-burnt-orange font-mono uppercase">Signal Artifact</p>
+                        <div class="flex-1 flex flex-col gap-1">
+                            <h3 class="text-xl font-black uppercase text-mustard tracking-tight">${item.name}</h3>
+                            <p class="text-[10px] text-burnt-orange font-mono uppercase tracking-widest">Signal Artifact • Unit ${idx + 1}</p>
                         </div>
-                        <span class="font-mono text-mustard mr-4 font-bold text-lg">${item.price}€</span>
-                        <button onclick="removeFromCart(${idx})" class="text-red-500/50 hover:text-red-500 transition-colors p-2" title="Eliminar Transmisión">
-                            <span class="material-symbols-outlined text-lg">delete</span>
-                        </button>
+                        <div class="flex flex-col items-end gap-2">
+                            <span class="font-black text-accent text-2xl tracking-tighter">${item.price}€</span>
+                            <button onclick="removeFromCart(${idx})" class="text-burnt-orange opacity-40 hover:opacity-100 transition-opacity flex items-center gap-1" title="Eliminar Transmisión">
+                                <span class="material-symbols-outlined text-xs">close</span>
+                                <span class="text-[10px] font-mono uppercase font-bold">Purge</span>
+                            </button>
+                        </div>
                     </div>
                 `;
             }).join('');

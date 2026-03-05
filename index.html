@@ -60,7 +60,8 @@
                     </svg>
                     <div
                         class="relative z-10 container mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-24 items-center py-12 md:py-20 lg:py-0">
-                        <div class="flex flex-col gap-6 lg:max-w-2xl text-center lg:text-left items-center lg:items-start">
+                        <div
+                            class="flex flex-col gap-6 lg:max-w-2xl text-center lg:text-left items-center lg:items-start">
                             <div
                                 class="flex items-center gap-2 text-mustard font-mono text-xs md:text-sm tracking-[0.2em] uppercase">
                                 <span class="w-2 h-2 rounded-full bg-mustard animate-pulse"></span>
@@ -123,15 +124,16 @@
                         </div>
                     </div>
                 </section>
-                <section class="py-20 px-6 max-w-7xl mx-auto">
-                    <div class="flex flex-col gap-4 mb-12">
+                <section class="py-24 px-6 max-w-7xl mx-auto reveal">
+                    <div class="flex flex-col gap-4 mb-16">
                         <h2
-                            class="text-3xl md:text-5xl font-bold tracking-tight text-tobacco dark:text-mustard uppercase">
+                            class="text-3xl md:text-6xl font-black tracking-[0.2em] text-tobacco dark:text-mustard uppercase leading-none">
                             The Analog Trilogy
                         </h2>
-                        <p class="text-[#8d6e63] dark:text-[#d4c5a6] max-w-2xl text-lg">
+                        <div class="h-1 w-24 bg-mustard/50 mb-2"></div>
+                        <p class="text-[#8d6e63] dark:text-[#d4c5a6] max-w-2xl text-lg font-light leading-relaxed">
                             Discover the three foundational albums that defined the Trieste sound. Recorded entirely on
-                            magnetic tape.
+                            magnetic tape between 1972 and 1978.
                         </p>
                     </div>
                     <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -202,35 +204,38 @@
                     </div>
                 </section>
 
-                <section class="py-32 px-6 bg-[#1a1613]">
-                    <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+                <section class="py-32 px-6 bg-[#1a1613] reveal">
+                    <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
                         <div class="order-2 lg:order-1 flex justify-center">
                             <div
-                                class="relative w-2/3 md:w-1/2 lg:w-4/5 aspect-[3/4] overflow-hidden photo-frame transform -rotate-1">
+                                class="relative w-full md:w-4/5 lg:w-full aspect-[3/4] overflow-hidden photo-frame transform -rotate-1 shadow-2xl">
                                 <img src="assets/c6a44725-604e-43aa-baeb-ae759a1f0174.JPG"
                                     alt="DreamSequence Close Portrait"
-                                    class="w-full h-full object-cover grayscale-[0.2] sepia-[0.1]">
+                                    class="w-full h-full object-cover grayscale-[0.2] sepia-[0.1] hover:scale-105 transition-transform duration-[2000ms]">
                                 <div class="absolute inset-0 bg-black/10 mix-blend-multiply"></div>
                             </div>
                         </div>
-                        <div class="order-1 lg:order-2 flex flex-col gap-8">
-                            <h2 class="text-4xl md:text-6xl font-black uppercase tracking-tighter text-mustard">
-                                Scuola Cosmica Italiana
+                        <div class="order-1 lg:order-2 flex flex-col gap-10">
+                            <h2
+                                class="text-4xl md:text-7xl font-black uppercase tracking-tight text-mustard leading-none">
+                                Scuola Cosmica<br>Italiana
                             </h2>
-                            <p class="text-xl text-[#d4c5a6] leading-relaxed font-light italic">
+                            <p
+                                class="text-2xl text-[#d4c5a6] leading-relaxed font-light italic border-l-4 border-burnt-orange pl-8 py-2">
                                 "The machine is not the master; the oscillation is the breath. We don't play notes, we
                                 capture the silence of the Adriatic and turn it into light."
                             </p>
-                            <p class="text-[#a1887f] leading-relaxed">
+                            <p class="text-[#a1887f] leading-relaxed text-lg">
                                 DreamSequence wasn't just a band; it was a movement. In a Trieste caught between
                                 borders, they found freedom in the frequency between two notes. Every recording was a
                                 ritual, every concert an exploration of the unknown.
                             </p>
-                            <div>
+                            <div class="pt-4">
                                 <a href="biography.html"
-                                    class="inline-flex items-center gap-2 text-mustard border-b-2 border-mustard pb-1 font-bold uppercase tracking-widest hover:text-accent hover:border-accent transition-all">
+                                    class="inline-flex items-center gap-4 text-mustard border-b-2 border-mustard/0 hover:border-mustard pb-2 font-bold uppercase tracking-[0.3em] hover:text-accent transition-all group">
                                     Deep Dive into the Archives
-                                    <span class="material-symbols-outlined">arrow_right_alt</span>
+                                    <span
+                                        class="material-symbols-outlined transition-transform group-hover:translate-x-2">arrow_right_alt</span>
                                 </a>
                             </div>
                         </div>
