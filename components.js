@@ -1,9 +1,12 @@
 const Header = () => `
-<header class="sticky top-0 z-[60] w-full backdrop-blur-md bg-background-light/90 dark:bg-[#1a1a1a]/90 border-b border-[#d69e2e]/30 dark:border-[#5d4037] overflow-hidden">
-    <!-- Oscilloscope Canvas Background -->
-    <canvas id="header-oscilloscope" class="absolute inset-x-0 bottom-0 h-12 w-full opacity-20 pointer-events-none"></canvas>
+<header class="fixed top-0 left-0 z-[100] w-full border-b border-transparent transition-all duration-500" id="main-header-nav">
+    <!-- Oscilloscope Canvas Background (Hidden on scroll) -->
+    <canvas id="header-oscilloscope" class="absolute inset-x-0 bottom-0 h-10 w-full opacity-20 pointer-events-none transition-opacity duration-500"></canvas>
     
-    <div class="flex items-center justify-between px-6 py-2 max-w-7xl mx-auto w-full relative z-10">
+    <!-- Background Layer (Controlled by Scroll) -->
+    <div id="nav-bg" class="absolute inset-0 bg-background-light/0 dark:bg-[#1a1a1a]/0 backdrop-blur-0 transition-all duration-500 pointer-events-none"></div>
+
+    <div class="flex items-center justify-between px-6 py-4 max-w-7xl mx-auto w-full relative z-[110] transition-all duration-500" id="nav-content">
         <a href="index.html" class="flex items-center gap-3 group">
             <div class="size-10 md:size-12 overflow-hidden rounded-full border border-mustard/30 shadow-lg group-hover:scale-110 transition-transform shrink-0">
                 <img src="assets/logo.jpg" alt="DreamSequence Logo" class="w-full h-full object-cover">
@@ -22,28 +25,68 @@ const Header = () => `
         </nav>
 
         <div class="flex items-center gap-3 md:gap-4">
-            <button class="lg:hidden text-tobacco dark:text-accent p-1" onclick="toggleMobileMenu()">
-                <span class="material-symbols-outlined text-3xl" id="menu-icon">menu</span>
+            <button class="lg:hidden text-tobacco dark:text-accent p-1 transition-transform active:scale-95" onclick="toggleMobileMenu()">
+                <span class="material-symbols-outlined text-4xl" id="menu-icon">menu</span>
             </button>
         </div>
     </div>
     
-    <!-- Mobile Menu Overlay -->
-    <div id="mobile-menu" class="fixed inset-0 top-16 z-[70] hidden bg-[#1a1613]/98 backdrop-blur-xl lg:hidden animate-in fade-in slide-in-from-top-4 duration-300">
-        <nav class="flex flex-col items-center justify-center h-full gap-8 p-6">
-            <a class="text-2xl font-bold tracking-[0.2em] uppercase text-mustard hover:text-accent transition-colors" href="biography.html" onclick="toggleMobileMenu()">Biography</a>
-            <a class="text-2xl font-bold tracking-[0.2em] uppercase text-mustard hover:text-accent transition-colors" href="collection.html" onclick="toggleMobileMenu()">Discography</a>
-            <a class="text-2xl font-bold tracking-[0.2em] uppercase text-mustard hover:text-accent transition-colors" href="gallery.html" onclick="toggleMobileMenu()">Gallery</a>
-            <a class="text-2xl font-bold tracking-[0.2em] uppercase text-mustard hover:text-accent transition-colors" href="tours.html" onclick="toggleMobileMenu()">Tours</a>
+    <!-- Mobile Menu Overlay (Wolf Alice inspired) -->
+    <div id="mobile-menu" class="fixed inset-0 z-[80] hidden bg-cosmic-black lg:hidden animate-in fade-in duration-500 overflow-hidden">
+        <!-- Noise Texture Layers -->
+        <div class="absolute inset-0 pointer-events-none opacity-40 bg-noise mix-blend-overlay"></div>
+        <div class="absolute inset-0 pointer-events-none opacity-20 crt-overlay"></div>
+        
+        <div class="relative h-full flex flex-col px-10 pt-48 pb-16 safe-area-inset overflow-y-auto">
+            <nav class="flex flex-col gap-8 md:gap-12">
+                <a class="text-5xl md:text-7xl font-black uppercase tracking-tighter text-mustard hover:text-accent transition-all hover:pl-4 focus:pl-4" href="biography.html" onclick="toggleMobileMenu()">Biography</a>
+                <a class="text-5xl md:text-7xl font-black uppercase tracking-tighter text-mustard hover:text-accent transition-all hover:pl-4 focus:pl-4" href="collection.html" onclick="toggleMobileMenu()">Discography</a>
+                <a class="text-5xl md:text-7xl font-black uppercase tracking-tighter text-mustard hover:text-accent transition-all hover:pl-4 focus:pl-4" href="gallery.html" onclick="toggleMobileMenu()">Gallery</a>
+                <a class="text-5xl md:text-7xl font-black uppercase tracking-tighter text-mustard hover:text-accent transition-all hover:pl-4 focus:pl-4" href="tours.html" onclick="toggleMobileMenu()">Tours</a>
+            </nav>
             
-            <div class="mt-12 flex gap-8">
-                <a href="#" class="text-mustard/60 hover:text-mustard"><svg class="size-8" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"></path></svg></a>
-                <a href="https://dreamsequence3.bandcamp.com" target="_blank" class="text-mustard/60 hover:text-mustard"><svg class="size-8" fill="currentColor" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M0 18.75l7.437-13.5H24l-7.438 13.5H0z"></path></svg></a>
+            <div class="mt-auto pt-20 flex flex-col gap-8">
+                <div class="h-px w-24 bg-burnt-orange/30"></div>
+                <div class="flex gap-10">
+                    <a href="https://www.instagram.com/dreamsequence.italia/" target="_blank" class="text-mustard/60 hover:text-mustard transition-colors transform hover:scale-110">
+                        <svg class="size-8" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"></path></svg>
+                    </a>
+                    <a href="https://dreamsequence3.bandcamp.com" target="_blank" class="text-mustard/60 hover:text-mustard transition-colors transform hover:scale-110">
+                        <svg class="size-8" fill="currentColor" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M0 18.75l7.437-13.5H24l-7.438 13.5H0z"></path></svg>
+                    </a>
+                </div>
+                <p class="text-[10px] uppercase font-mono tracking-[0.4em] text-mustard/40">Trieste Archive Terminal DS-72</p>
             </div>
-        </nav>
+        </div>
     </div>
 </header>
 `;
+
+// Scroll Effect logic
+const initScrollListener = () => {
+    window.addEventListener('scroll', () => {
+        const navBg = document.getElementById('nav-bg');
+        const navContent = document.getElementById('nav-content');
+        const navOsc = document.getElementById('header-oscilloscope');
+        const nav = document.getElementById('main-header-nav');
+
+        if (window.scrollY > 50) {
+            navBg?.classList.remove('bg-background-light/0', 'dark:bg-[#1a1a1a]/0', 'backdrop-blur-0');
+            navBg?.classList.add('bg-background-light/95', 'dark:bg-[#1a1a1a]/95', 'backdrop-blur-md');
+            navContent?.classList.remove('py-4');
+            navContent?.classList.add('py-2');
+            navOsc?.classList.add('opacity-0');
+            nav?.classList.add('border-mustard/20');
+        } else {
+            navBg?.classList.add('bg-background-light/0', 'dark:bg-[#1a1a1a]/0', 'backdrop-blur-0');
+            navBg?.classList.remove('bg-background-light/95', 'dark:bg-[#1a1a1a]/95', 'backdrop-blur-md');
+            navContent?.classList.add('py-4');
+            navContent?.classList.remove('py-2');
+            navOsc?.classList.remove('opacity-0');
+            nav?.classList.remove('border-mustard/20');
+        }
+    });
+};;
 
 // Oscilloscope Generator
 const initOscilloscope = () => {
@@ -177,6 +220,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (headerEl) {
         headerEl.innerHTML = Header();
         initOscilloscope();
+        initScrollListener();
     }
 
     const footerEl = document.getElementById('main-footer');
@@ -281,17 +325,33 @@ window.showToast = (msg) => {
 window.toggleMobileMenu = () => {
     const menu = document.getElementById('mobile-menu');
     const icon = document.getElementById('menu-icon');
-    if (menu && icon) {
+    const headerNav = document.getElementById('main-header-nav');
+
+    if (menu && icon && headerNav) {
         const isHidden = menu.classList.contains('hidden');
         if (isHidden) {
             menu.classList.remove('hidden');
             menu.classList.add('flex');
             icon.innerText = 'close';
+            document.body.classList.add('menu-open');
             document.body.style.overflow = 'hidden';
+
+            // Add animation to links
+            const links = menu.querySelectorAll('nav a');
+            links.forEach((link, i) => {
+                link.style.opacity = '0';
+                link.style.transform = 'translateY(20px)';
+                setTimeout(() => {
+                    link.style.transition = 'all 0.5s cubic-bezier(0.16, 1, 0.3, 1)';
+                    link.style.opacity = '1';
+                    link.style.transform = 'translateY(0)';
+                }, 100 + (i * 100));
+            });
         } else {
             menu.classList.add('hidden');
             menu.classList.remove('flex');
             icon.innerText = 'menu';
+            document.body.classList.remove('menu-open');
             document.body.style.overflow = '';
         }
     }
