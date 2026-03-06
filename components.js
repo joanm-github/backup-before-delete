@@ -202,20 +202,42 @@ const initScrollReveal = () => {
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
-                entry.target.classList.add('opacity-100', 'translate-y-0');
-                entry.target.classList.remove('opacity-0', 'translate-y-10');
+                const delay = entry.target.dataset.delay || 0;
+                setTimeout(() => {
+                    entry.target.classList.add('opacity-100', 'translate-y-0');
+                    entry.target.classList.remove('opacity-0', 'translate-y-10');
+                }, delay);
             }
         });
     }, observerOptions);
 
     document.querySelectorAll('.reveal').forEach((el, index) => {
-        el.classList.add('opacity-0', 'translate-y-10', 'transition-all', 'duration-700', 'will-change-transform');
+        // Automatically stagger elements in the same container if they don't have a manual delay
+        const parent = el.parentElement;
+        const indexInParent = Array.from(parent.children).filter(c => c.classList.contains('reveal')).indexOf(el);
+        if (!el.dataset.delay && indexInParent > 0) {
+            el.dataset.delay = indexInParent * 100;
+        }
+
+        el.classList.add('opacity-0', 'translate-y-10', 'transition-all', 'duration-1000', 'will-change-transform');
         observer.observe(el);
     });
 };
 
 // Injection Logic
 document.addEventListener('DOMContentLoaded', () => {
+    // Add professional visual layers
+    if (!document.querySelector('.analog-noise')) {
+        const noise = document.createElement('div');
+        noise.className = 'analog-noise';
+        document.body.appendChild(noise);
+    }
+    if (!document.querySelector('.crt-scanlines')) {
+        const scanlines = document.createElement('div');
+        scanlines.className = 'crt-scanlines';
+        document.body.appendChild(scanlines);
+    }
+
     const headerEl = document.getElementById('main-header');
     if (headerEl) {
         headerEl.innerHTML = Header();

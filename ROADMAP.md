@@ -16,6 +16,9 @@
 - [x] Pulido final de animaciones y micro-interacciones (Nav, Checkout, Cart).
 - [x] Gestión de estado vacío del carrito (Empty state view).
 - [x] Actualización de discografía (The Euclidean Sea) y Galería con fotos reales.
+- [x] **Rediseño Menú Móvil**: Overlay a pantalla completa inspirado en Wolf Alice.
+- [x] **Optimización UI Pro**: Capas de ruido analógico dinámico, efectos CRT y scroll suave global.
+- [x] **Navegación Fija Dinámica**: Cabecera compacta que reacciona al scroll.
 
 ### 2. Lanzamiento
 - [x] SEO y Meta tags.
@@ -23,7 +26,7 @@
 
 ## 📡 Próximas Ondas (Sugerencias)
 - [ ] **Boletín de Señales**: Formulario de suscripción estilo terminal para recibir actualizaciones de archivo.
-- [ ] **Pre-escucha Atmosférica**: Pequeño reproductor de audio con ruido blanco y fragmentos de sintetizador al navegar.
+- [ ] **Audio Reactivo**: Hacer que el osciloscopio de la cabecera reaccione a la música real (Web Audio API).
 - [ ] **Mapa de Transmisión**: Mapa interactivo de los "Live Signals" usando coordenadas reales de las giras.
 
 ---
