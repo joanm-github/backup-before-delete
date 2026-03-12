@@ -204,22 +204,15 @@ const initScrollReveal = () => {
             if (entry.isIntersecting) {
                 const delay = entry.target.dataset.delay || 0;
                 setTimeout(() => {
-                    entry.target.classList.add('opacity-100', 'translate-y-0');
-                    entry.target.classList.remove('opacity-0', 'translate-y-10');
+                    entry.target.classList.add('reveal-visible');
+                    entry.target.classList.remove('reveal-hidden');
                 }, delay);
             }
         });
     }, observerOptions);
 
-    document.querySelectorAll('.reveal').forEach((el, index) => {
-        // Automatically stagger elements in the same container if they don't have a manual delay
-        const parent = el.parentElement;
-        const indexInParent = Array.from(parent.children).filter(c => c.classList.contains('reveal')).indexOf(el);
-        if (!el.dataset.delay && indexInParent > 0) {
-            el.dataset.delay = indexInParent * 100;
-        }
-
-        el.classList.add('opacity-0', 'translate-y-10', 'transition-all', 'duration-1000', 'will-change-transform');
+    document.querySelectorAll('.reveal').forEach((el) => {
+        el.classList.add('reveal-hidden');
         observer.observe(el);
     });
 };

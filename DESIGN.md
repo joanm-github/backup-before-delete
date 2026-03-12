@@ -1,38 +1,31 @@
-# Design System: DreamSequence
+# Design System: DreamSequence (Trieste Archive)
 **Project ID:** 3186960889352125021
 
 ## 1. Visual Theme & Atmosphere
-The design embraces a **retro-futuristic, 70s analog aesthetic**, capturing the essence of vintage synthesizer hardware and early science-fiction film interfaces. The atmosphere is **atmospheric, technological, and immersive**, utilizing a modular "synth panel" grid and glowing elements on a deep, dark expanse to create a sense of mystery and late-night studio vibes.
+The design embraces a **warm, analog 1970s archive aesthetic**, capturing the essence of vintage Italian experimental music studios. The mood is **nostalgic, tactile, and immersive**, utilizing "cabinet-style" layouts, worn paper textures (simulated via grain), and glowing indicators that mimic vacuum tube equipment found in the portside studios of Trieste.
 
 ## 2. Color Palette & Roles
-*   **Cosmic Canvas (#121214):** An ultra-dark, desaturated blue-grey used as the primary background.
-*   **Panel Surface (#242429):** A slightly lighter blue-grey used for cards, modules, and surface elements.
-*   **Luminous Teal (#29B6B6):** A vibrant, saturated teal used for primary CTAs, active states, and technical indicators.
-*   **CRT Amber (#FFC107):** A glowing amber used sparingly for highlights, warnings, and decorative phosphor effects.
-*   **Mustard Highlight (#d69e2e):** A warm, vintage mustard color used for branding and key header elements.
+*   **Mustard Gold (#d69e2e):** The primary brand and action color. Used for headers, key indicators, and "active" states.
+*   **Burnt Orange (#b35900):** Secondary accent for technical labels, mono-spaced data, and sub-headings.
+*   **Dark Tobacco (#131315):** The primary deep background color.
+*   **Cream Tobacco (#f3e5ab / #d4c5a6):** Primary text colors, providing high legibility with an aged paper feel against the dark canvas.
 
 ## 3. Typography Rules
-*   **Font Family:** `Space Grotesk` is used throughout.
-*   **Headlines:** Bold, uppercase, and set with generous letter-spacing to mimic technical documentation and hardware labels.
-*   **Body Text:** Regular weight with ample line-height for readability against dark backgrounds.
-*   **Technical Text:** Monospace-style arrangements for numeric data and specific "signal" information.
+*   **Font Family:** `Space Grotesk` (Google Fonts).
+*   **Headlines:** Heavy weight (`font-black`), uppercase, with tight tracking for a bold, statement-like presence.
+*   **Monospace Elements:** Used for data (years, formats, stats) to evoke typewriter or early terminal labels.
 
 ## 4. Component Stylings
-*   **Buttons:** Subtly rounded (8px radius). Primary buttons feature the Luminous Teal background with dark text. Secondary buttons are outlined with teal or mustard borders.
-*   **Cards/Containers:** Modular "synth panels" with 8px corner rounding. Instead of heavy shadows, they use whisper-thin, illuminated borders in the primary teal to indicate an "active" or "on" state.
-*   **Navigation:** Styled as a sophisticated synthesizer display. The header is a persistent bar with a primary color glow on active links.
-*   **Images:** Grainy, ethereal photography with subtle sepia or color overlays, often held in "photo frame" containers with thin borders.
+*   **Photo Frames:** Images are encased in thin-bordered frames (`photo-frame`) with subtle rotations and sepia/grayscale filters to look like physical archival photos.
+*   **Buttons:** Using `btn-vintage` (gradients) or `bandcamp-btn` (branded teal) with smooth scale transitions on hover.
+*   **Archive Terminal:** Stats and technical data are presented in a "Console" interface with oscillating pings and shimmer effects.
 
 ## 5. Layout Principles
-*   **Whitespace:** Generous spacing within and between modules to prevent visual fatigue and enhance the deep-space vibe.
-*   **Grid:** A modular hierarchy that mimics physical control surfaces, allowing for a structured yet dynamic arrangement of content.
-*   **Responsivity:** Fluid adaptation from desktop "panels" to mobile "control strips," maintaining the tactile, hardware feel.
+*   **Negative Space:** Large vertical margins (`mb-32`, `mt-48`) create a sense of importance for each archive "segment."
+*   **Responsive Grid:** All discography and gallery items use a flexible grid that standardizes sizes across mobile and desktop.
+*   **Scroll Reveal:** Elements use an `IntersectionObserver` to fade into view from the bottom, creating a "discovery" experience as the user explores the archive.
 
-## 6. Design System Notes for Stitch Generation
-When generating new screens for DreamSequence, follow these rules:
-- Always use a **dark theme** with the Cosmic Canvas background (#121214).
-- Use **Luminous Teal (#29B6B6)** for all primary interactions and glowing accents.
-- Frame everything as if it were part of an **analog synthesizer panel**.
-- Use **Space Grotesk** with uppercase, wide-tracked styling for headings.
-- Avoid traditional drop shadows; use **thin glows** (#29B6B6) for elevation and focus.
-- Incorporate **CRT-style grainy overlays** or noise textures for texture.
+## 6. Pro Max Improvements
+*   **CRT Scanlines:** A subtle fixed overlay adds the texture of an old monitor.
+*   **Analog Noise:** A dynamic SVG grain overlay provides "film grain" texture across the entire experience.
+*   **Terminal Dashboards:** Interactive statistics modules for tour data and signal resonance.
