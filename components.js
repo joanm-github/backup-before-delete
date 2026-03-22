@@ -155,6 +155,21 @@ const initOscilloscope = () => {
     draw();
 };
 
+const VisitorCounter = () => {
+    let visits = localStorage.getItem('ds-visits') || 7428;
+    visits = parseInt(visits) + 1;
+    localStorage.setItem('ds-visits', visits);
+    const digits = visits.toString().padStart(6, '0').split('');
+    return `
+    <div class="retro-counter-container hidden md:flex">
+        <span class="text-[7px] font-mono text-mustard/40 uppercase tracking-[0.4em] mb-1">Archival Access Count</span>
+        <div class="retro-counter-display">
+            ${digits.map(d => `<div class="retro-counter-digit">${d}</div>`).join('')}
+        </div>
+    </div>
+    `;
+};
+
 const Footer = () => `
 <footer class="mt-auto border-t border-mustard/10 bg-background-dark py-8 px-6 mb-24 md:mb-0 reveal">
     <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
@@ -170,7 +185,8 @@ const Footer = () => `
         </a>
 
         <!-- Rights & Terminal -->
-        <div class="hidden md:flex flex-col items-center">
+        <div class="flex flex-col items-center gap-4">
+            ${VisitorCounter()}
             <p class="text-[9px] text-tobacco/40 uppercase tracking-[0.3em] font-mono">
                 © 2024 DreamSequence Archives • Terminal DS-72
             </p>
@@ -290,13 +306,22 @@ window.closeModal = () => {
 const ALBUM_LINKS = {
     'Nebbia': 'https://dreamsequence3.bandcamp.com/album/nebbia',
     'Sequence': 'https://dreamsequence3.bandcamp.com/album/sequence',
-    'Ganymede': 'https://dreamsequence3.bandcamp.com/album/the-euclidean-sea',
-    'The Euclidean Sea': 'https://dreamsequence3.bandcamp.com/album/the-euclidean-sea'
+    'The Euclidean Sea': 'https://dreamsequence3.bandcamp.com/album/the-euclidean-sea',
+    'Bellas Artes': 'https://dreamsequence3.bandcamp.com/album/auditorio-c-rculo-de-bellas-artes-madrid',
+    'Massana': 'https://dreamsequence3.bandcamp.com/album/escola-massana-barcelona',
+    'Live Paris': 'https://dreamsequence3.bandcamp.com/album/en-concert-au-th-tre-de-la-commune',
+    'Triestina': 'https://dreamsequence3.bandcamp.com/album/cosmonautica-triestina',
+    'ICA London': 'https://dreamsequence3.bandcamp.com/album/live-at-the-ica',
+    'KS Session': 'https://dreamsequence3.bandcamp.com/album/ks-session'
 };
 
 window.playAlbum = (title) => {
-    const url = ALBUM_LINKS[title] || ALBUM_LINKS['Nebbia'];
-    window.open(url, '_blank');
+    const url = ALBUM_LINKS[title];
+    if (url) {
+        window.open(url, '_blank');
+    } else {
+        showToast(`'${title}' is not available yet`);
+    }
 };
 
 // Cart Logic

@@ -91,7 +91,7 @@
                             </p>
                             <div class="flex flex-wrap gap-6 mt-6">
                                 <button
-                                    onclick="playAlbum('Nebbia', 'Nebbia (1976)', 'assets/lp/Nebbia 1976.png', 'https://dreamsequence3.bandcamp.com/')"
+                                    onclick="playAlbum('Nebbia')"
                                     class="flex items-center gap-4 cursor-pointer justify-center rounded-sm h-14 px-10 bg-transparent hover:bg-mustard/10 text-mustard border border-mustard/40 text-sm font-black tracking-[0.2em] uppercase transition-all">
                                     <span class="material-symbols-outlined filled">play_arrow</span>
                                     <span>Stream Audio</span>
@@ -112,6 +112,8 @@
                                 class="text-xs font-bold uppercase tracking-[0.2em] text-mustard hover:text-accent transition-all">Singles</a>
                             <a href="#lives"
                                 class="text-xs font-bold uppercase tracking-[0.2em] text-mustard hover:text-accent transition-all">Lives</a>
+                            <a href="#rarities"
+                                class="text-xs font-bold uppercase tracking-[0.2em] text-mustard hover:text-accent transition-all">Rarities</a>
                         </nav>
                     </div>
 
@@ -332,8 +334,6 @@
                                 </div>
                             </div>
                         </div>
-                    </section>
-
                     <!-- LIVES SECTION -->
                     <section id="lives" class="mb-32 scroll-mt-48">
                         <div class="mb-12 flex items-center gap-6">
@@ -342,6 +342,29 @@
                             <div class="h-px grow bg-mustard/10"></div>
                         </div>
                         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12">
+                            <!-- 1972: Triestina VCS3 -->
+                            <div
+                                class="group relative flex flex-col gap-6 reveal">
+                                <div
+                                    class="relative aspect-square w-full overflow-hidden cursor-pointer photo-frame-dark shadow-xl">
+                                    <img src="assets/lives/Triestina_VCS3.jpg" alt="Triestina VCS3"
+                                        class="h-full w-full object-cover transition-transform duration-[4s] group-hover:scale-110">
+                                    <div
+                                        class="absolute inset-0 flex items-center justify-center bg-background-dark/60 backdrop-blur-sm opacity-0 transition-all duration-500 group-hover:opacity-100">
+                                        <button onclick="playAlbum('Triestina')"
+                                            class="relative flex size-16 items-center justify-center rounded-full border border-mustard/30 text-mustard transition-all duration-300 hover:scale-110 hover:bg-mustard hover:text-background-dark shadow-2xl">
+                                            <span class="material-symbols-outlined text-4xl">play_arrow</span>
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="flex flex-col gap-1">
+                                    <h3 class="text-lg font-black uppercase tracking-tight text-mustard">Triestina VCS3</h3>
+                                    <p class="font-mono text-[10px] uppercase tracking-[0.2em] text-burnt-orange">1972 •
+                                        Terminal Session</p>
+                                </div>
+                            </div>
+
+                            <!-- 1974: Live '74 -->
                             <div class="group relative flex flex-col gap-6 reveal">
                                 <div
                                     class="relative aspect-square w-full overflow-hidden cursor-pointer photo-frame-dark shadow-xl">
@@ -361,6 +384,117 @@
                                         Live Tape</p>
                                 </div>
                             </div>
+
+                            <!-- 1976: Ljubljana '76 -->
+                            <div class="group relative flex flex-col gap-6 reveal">
+                                <div
+                                    class="relative aspect-square w-full overflow-hidden cursor-pointer photo-frame-dark shadow-xl">
+                                    <img src="assets/lives/Live Ljubljana'76 1978.png" alt="Live Ljubljana"
+                                        class="h-full w-full object-cover transition-transform duration-[4s] group-hover:scale-110">
+                                    <div
+                                        class="absolute inset-0 flex items-center justify-center bg-background-dark/60 backdrop-blur-sm opacity-0 transition-all duration-500 group-hover:opacity-100">
+                                        <button onclick="playAlbum('Live Ljubljana')"
+                                            class="relative flex size-16 items-center justify-center rounded-full border border-mustard/30 text-mustard transition-all duration-300 hover:scale-110 hover:bg-mustard hover:text-background-dark shadow-2xl">
+                                            <span class="material-symbols-outlined text-4xl">play_arrow</span>
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="flex flex-col gap-1">
+                                    <h3 class="text-lg font-black uppercase tracking-tight text-mustard">Ljubljana '76
+                                    </h3>
+                                    <p class="font-mono text-[10px] uppercase tracking-[0.2em] text-burnt-orange">1976/78 •
+                                        Live Capture</p>
+                                </div>
+                            </div>
+
+                            <!-- 1977: Paris '77 -->
+                            <div class="group relative flex flex-col gap-6 reveal">
+                                <div
+                                    class="relative aspect-square w-full overflow-hidden cursor-pointer photo-frame-dark shadow-xl">
+                                    <img src="assets/lives/Theatredela Commune1977_Paris.png" alt="Live Paris"
+                                        class="h-full w-full object-cover transition-transform duration-[4s] group-hover:scale-110">
+                                    <div
+                                        class="absolute inset-0 flex items-center justify-center bg-background-dark/60 backdrop-blur-sm opacity-0 transition-all duration-500 group-hover:opacity-100">
+                                        <button onclick="playAlbum('Live Paris')"
+                                            class="relative flex size-16 items-center justify-center rounded-full border border-mustard/30 text-mustard transition-all duration-300 hover:scale-110 hover:bg-mustard hover:text-background-dark shadow-2xl">
+                                            <span class="material-symbols-outlined text-4xl">play_arrow</span>
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="flex flex-col gap-1">
+                                    <h3 class="text-lg font-black uppercase tracking-tight text-mustard">Paris '77</h3>
+                                    <p class="font-mono text-[10px] uppercase tracking-[0.2em] text-burnt-orange">1977 •
+                                        Live Performance</p>
+                                </div>
+                            </div>
+
+                            <!-- 1977: Bellas Artes '77 -->
+                            <div
+                                class="group relative flex flex-col gap-6 reveal">
+                                <div
+                                    class="relative aspect-square w-full overflow-hidden cursor-pointer photo-frame-dark shadow-xl">
+                                    <img src="assets/lives/BellasArtes_1977.jpg" alt="Bellas Artes '77"
+                                        class="h-full w-full object-cover transition-transform duration-[4s] group-hover:scale-110">
+                                    <div
+                                        class="absolute inset-0 flex items-center justify-center bg-background-dark/60 backdrop-blur-sm opacity-0 transition-all duration-500 group-hover:opacity-100">
+                                        <button onclick="playAlbum('Bellas Artes')"
+                                            class="relative flex size-16 items-center justify-center rounded-full border border-mustard/30 text-mustard transition-all duration-300 hover:scale-110 hover:bg-mustard hover:text-background-dark shadow-2xl">
+                                            <span class="material-symbols-outlined text-4xl">play_arrow</span>
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="flex flex-col gap-1">
+                                    <h3 class="text-lg font-black uppercase tracking-tight text-mustard">Bellas Artes '77</h3>
+                                    <p class="font-mono text-[10px] uppercase tracking-[0.2em] text-burnt-orange">1977 •
+                                        Live Capture</p>
+                                </div>
+                            </div>
+
+                            <!-- 1977: Massana '77 -->
+                            <div
+                                class="group relative flex flex-col gap-6 reveal">
+                                <div
+                                    class="relative aspect-square w-full overflow-hidden cursor-pointer photo-frame-dark shadow-xl">
+                                    <img src="assets/lives/Massana_1977.jpg" alt="Massana '77"
+                                        class="h-full w-full object-cover transition-transform duration-[4s] group-hover:scale-110">
+                                    <div
+                                        class="absolute inset-0 flex items-center justify-center bg-background-dark/60 backdrop-blur-sm opacity-0 transition-all duration-500 group-hover:opacity-100">
+                                        <button onclick="playAlbum('Massana')"
+                                            class="relative flex size-16 items-center justify-center rounded-full border border-mustard/30 text-mustard transition-all duration-300 hover:scale-110 hover:bg-mustard hover:text-background-dark shadow-2xl">
+                                            <span class="material-symbols-outlined text-4xl">play_arrow</span>
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="flex flex-col gap-1">
+                                    <h3 class="text-lg font-black uppercase tracking-tight text-mustard">Massana '77</h3>
+                                    <p class="font-mono text-[10px] uppercase tracking-[0.2em] text-burnt-orange">1977 •
+                                        Live Performance</p>
+                                </div>
+                            </div>
+
+                            <!-- 1977: ICA London -->
+                            <div
+                                class="group relative flex flex-col gap-6 reveal">
+                                <div
+                                    class="relative aspect-square w-full overflow-hidden cursor-pointer photo-frame-dark shadow-xl">
+                                    <img src="assets/lives/ICA_London.jpg" alt="ICA London"
+                                        class="h-full w-full object-cover transition-transform duration-[4s] group-hover:scale-110">
+                                    <div
+                                        class="absolute inset-0 flex items-center justify-center bg-background-dark/60 backdrop-blur-sm opacity-0 transition-all duration-500 group-hover:opacity-100">
+                                        <button onclick="playAlbum('ICA London')"
+                                            class="relative flex size-16 items-center justify-center rounded-full border border-mustard/30 text-mustard transition-all duration-300 hover:scale-110 hover:bg-mustard hover:text-background-dark shadow-2xl">
+                                            <span class="material-symbols-outlined text-4xl">play_arrow</span>
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="flex flex-col gap-1">
+                                    <h3 class="text-lg font-black uppercase tracking-tight text-mustard">ICA London</h3>
+                                    <p class="font-mono text-[10px] uppercase tracking-[0.2em] text-burnt-orange">1977 •
+                                        Live in London</p>
+                                </div>
+                            </div>
+
+                            <!-- 1977: Live Prague -->
                             <div class="group relative flex flex-col gap-6 reveal">
                                 <div
                                     class="relative aspect-square w-full overflow-hidden cursor-pointer photo-frame-dark shadow-xl">
@@ -378,45 +512,6 @@
                                     <h3 class="text-lg font-black uppercase tracking-tight text-mustard">Live Prague
                                     </h3>
                                     <p class="font-mono text-[10px] uppercase tracking-[0.2em] text-burnt-orange">1977 •
-                                        Live Capture</p>
-                                </div>
-                            </div>
-                            <div class="group relative flex flex-col gap-6 reveal">
-                                <div
-                                    class="relative aspect-square w-full overflow-hidden cursor-pointer photo-frame-dark shadow-xl">
-                                    <img src="assets/lives/Theatredela Commune1977_Paris.png" alt="Live Paris"
-                                        class="h-full w-full object-cover transition-transform duration-[4s] group-hover:scale-110">
-                                    <div
-                                        class="absolute inset-0 flex items-center justify-center bg-background-dark/60 backdrop-blur-sm opacity-0 transition-all duration-500 group-hover:opacity-100">
-                                        <button onclick="playAlbum('Live Paris')"
-                                            class="relative flex size-16 items-center justify-center rounded-full border border-mustard/30 text-mustard transition-all duration-300 hover:scale-110 hover:bg-mustard hover:text-background-dark shadow-2xl">
-                                            <span class="material-symbols-outlined text-4xl">play_arrow</span>
-                                        </button>
-                                    </div>
-                                </div>
-                                <div class="flex flex-col gap-1">
-                                    <h3 class="text-lg font-black uppercase tracking-tight text-mustard">Paris '77</h3>
-                                    <p class="font-mono text-[10px] uppercase tracking-[0.2em] text-burnt-orange">1977 •
-                                        Live performance</p>
-                                </div>
-                            </div>
-                            <div class="group relative flex flex-col gap-6 reveal">
-                                <div
-                                    class="relative aspect-square w-full overflow-hidden cursor-pointer photo-frame-dark shadow-xl">
-                                    <img src="assets/lives/Live Ljubljana'76 1978.png" alt="Live Ljubljana"
-                                        class="h-full w-full object-cover transition-transform duration-[4s] group-hover:scale-110">
-                                    <div
-                                        class="absolute inset-0 flex items-center justify-center bg-background-dark/60 backdrop-blur-sm opacity-0 transition-all duration-500 group-hover:opacity-100">
-                                        <button onclick="playAlbum('Live Ljubljana')"
-                                            class="relative flex size-16 items-center justify-center rounded-full border border-mustard/30 text-mustard transition-all duration-300 hover:scale-110 hover:bg-mustard hover:text-background-dark shadow-2xl">
-                                            <span class="material-symbols-outlined text-4xl">play_arrow</span>
-                                        </button>
-                                    </div>
-                                </div>
-                                <div class="flex flex-col gap-1">
-                                    <h3 class="text-lg font-black uppercase tracking-tight text-mustard">Ljubljana '76
-                                    </h3>
-                                    <p class="font-mono text-[10px] uppercase tracking-[0.2em] text-burnt-orange">1978 •
                                         Live Capture</p>
                                 </div>
                             </div>
@@ -441,6 +536,34 @@
                                         Sea</h3>
                                     <p class="font-mono text-[10px] uppercase tracking-[0.2em] text-burnt-orange">1978 •
                                         Live in Studio</p>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- RARITIES SECTION -->
+                    <section id="rarities" class="mb-32 scroll-mt-48">
+                        <div class="mb-12 flex items-center gap-6">
+                            <h2 class="text-4xl font-black uppercase tracking-tighter text-mustard">Rarities & Sessions</h2>
+                            <div class="h-px grow bg-mustard/10"></div>
+                        </div>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12">
+                            <div class="group relative flex flex-col gap-6 reveal">
+                                <div
+                                    class="relative aspect-square w-full overflow-hidden cursor-pointer photo-frame-dark shadow-xl">
+                                    <img src="assets/rarities/KlausSession.jpg" alt="KS Session"
+                                        class="h-full w-full object-cover transition-transform duration-[4s] group-hover:scale-110">
+                                    <div
+                                        class="absolute inset-0 flex items-center justify-center bg-background-dark/60 backdrop-blur-sm opacity-0 transition-all duration-500 group-hover:opacity-100">
+                                        <button onclick="playAlbum('KS Session')"
+                                            class="relative flex size-16 items-center justify-center rounded-full border border-mustard/30 text-mustard transition-all duration-300 hover:scale-110 hover:bg-mustard hover:text-background-dark shadow-2xl">
+                                            <span class="material-symbols-outlined text-4xl">play_arrow</span>
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="flex flex-col gap-1">
+                                    <h3 class="text-lg font-black uppercase tracking-tight text-mustard">KS Session</h3>
+                                    <p class="font-mono text-[10px] uppercase tracking-[0.2em] text-burnt-orange">Archive • Studio Outtake</p>
                                 </div>
                             </div>
                         </div>
