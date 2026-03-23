@@ -155,20 +155,6 @@ const initOscilloscope = () => {
     draw();
 };
 
-const VisitorCounter = () => {
-    let visits = localStorage.getItem('ds-visits') || 7428;
-    visits = parseInt(visits) + 1;
-    localStorage.setItem('ds-visits', visits);
-    const digits = visits.toString().padStart(6, '0').split('');
-    return `
-    <div class="retro-counter-container hidden md:flex">
-        <span class="text-[7px] font-mono text-mustard/40 uppercase tracking-[0.4em] mb-1">Archival Access Count</span>
-        <div class="retro-counter-display">
-            ${digits.map(d => `<div class="retro-counter-digit">${d}</div>`).join('')}
-        </div>
-    </div>
-    `;
-};
 
 const Footer = () => `
 <footer class="mt-auto border-t border-mustard/10 bg-background-dark py-8 px-6 mb-24 md:mb-0 reveal">
@@ -186,7 +172,6 @@ const Footer = () => `
 
         <!-- Rights & Terminal -->
         <div class="flex flex-col items-center gap-4">
-            ${VisitorCounter()}
             <p class="text-[9px] text-tobacco/40 uppercase tracking-[0.3em] font-mono">
                 © 2024 DreamSequence Archives • Terminal DS-72
             </p>
