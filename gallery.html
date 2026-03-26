@@ -4,10 +4,10 @@
 <head>
     <meta charset="utf-8" />
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
-    <title>Photographic Archives | DreamSequence Studio & Live</title>
-    <meta name="description"
-        content="A visual journey through the history of DreamSequence. 35mm film captures from 1972-1980.">
-    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;display=swap"
+    <title>ARCHIVIO ANALOGICO | DreamSequence</title>
+    <meta name="description" content="Retrieval of analog data streams. Filtered technical archive of DreamSequence.">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=Space+Mono:wght@400;700&amp;display=swap"
         rel="stylesheet" />
     <link
         href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
@@ -17,147 +17,382 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 
-<body
-    class="bg-background-light dark:bg-background-dark text-tobacco dark:text-[#f3e5ab] font-display overflow-x-hidden">
+<body class="bg-[#080808] text-[#d4c5a6] font-display overflow-x-hidden analog-noise">
+
+    <!-- MAIN INTERFACE -->
     <div class="layout-container flex h-full grow flex-col">
-        <div id="main-header"></div>
+        <header>
+            <div id="main-header"></div>
+        </header>
 
-        <main class="flex-1 py-12 px-6">
-            <div class="max-w-7xl mx-auto">
-                <header class="mb-20 text-center">
-                    <h1
-                        class="text-5xl md:text-8xl font-black uppercase tracking-tighter text-glow text-mustard leading-none">
-                        Photographic Archives</h1>
-                    <p class="text-burnt-orange font-mono uppercase text-sm tracking-[0.4em] mt-6">Captured on 35mm film
-                        • Archive Transmission DS-72 • 30 Assets Recovered</p>
-                </header>
+        <main class="flex-1 px-6 md:px-12 py-20 max-w-[1400px] mx-auto w-full">
 
-                <div class="columns-1 sm:columns-2 lg:columns-3 xl:columns-4 gap-8 space-y-8 pb-20">
-                    <!-- Gallery Items (01-10) -->
-                    <div class="break-inside-avoid photo-frame-dark group cursor-pointer overflow-hidden reveal"
-                        onclick="showModal('assets/galery/ds-archive-01.jpg')">
-                        <img src="assets/galery/ds-archive-01.jpg" class="w-full h-auto archive-photo"
-                            alt="DreamSequence Archive 01">
+            <!-- TOP HEADER (BIOGRAPHY STYLE) -->
+            <header class="mb-32 text-center reveal">
+                <h1
+                    class="text-6xl md:text-9xl font-black uppercase tracking-tighter text-glow text-mustard mb-8 leading-none">
+                    ARCHIVES
+                </h1>
+                <p class="text-burnt-orange font-mono uppercase text-sm tracking-[0.4em] mb-12">
+                    CAPTURED ON 35MM · ARCHIVE TRANSMISSION · ASSETS RECOVERED
+                </p>
+            </header>
+
+            <!-- FILTER BAR -->
+            <div class="mt-32 border-t border-mustard/10 pt-20">
+                <div class="flex justify-end mb-12">
+                    <nav class="flex gap-8">
+                        <a href="#laboratory"
+                            class="text-xs font-bold uppercase tracking-[0.2em] text-mustard hover:text-white transition-all">laboratory</a>
+                        <a href="#live"
+                            class="text-xs font-bold uppercase tracking-[0.2em] text-mustard hover:text-white transition-all">live</a>
+                        <a href="#city-pictures"
+                            class="text-xs font-bold uppercase tracking-[0.2em] text-mustard hover:text-white transition-all">city pictures</a>
+                        <a href="#archive"
+                            class="text-xs font-bold uppercase tracking-[0.2em] text-mustard hover:text-white transition-all">archive</a>
+                    </nav>
+                </div>
+            </div>
+
+            <!-- LABORATORY -->
+            <div class="section-separator">
+                <span class="section-tag">Laboratory_Studies</span>
+            </div>
+            <div id="laboratory" class="carousel-container no-scrollbar mb-24">
+                <div class="carousel-item w-80 archive-card" onclick="showModal('assets/galery/ds-studio-01.jpeg')">
+                    <div class="img-container aspect-square mb-4">
+                        <img src="assets/galery/ds-studio-01.jpeg" alt="Studio 01">
+                    </div>
+                    <div class="flex justify-between items-end">
+                        <div class="tech-mono">
+                            <h3 class="text-mustard text-xs font-bold uppercase mb-1">SINTE_MARE_01</h3>
+                            <p class="text-[9px] text-white/30 uppercase tracking-widest">Trieste Lab / 1978</p>
+                        </div>
+                        <button class="btn-tech">VIEW</button>
+                    </div>
+                </div>
+
+                <div class="carousel-item w-80 archive-card" onclick="showModal('assets/galery/ds-studio-02.jpeg')">
+                    <div class="img-container aspect-square mb-4">
+                        <img src="assets/galery/ds-studio-02.jpeg" alt="Studio 02">
+                    </div>
+                    <div class="flex justify-between items-end">
+                        <div class="tech-mono">
+                            <h3 class="text-mustard text-xs font-bold uppercase mb-1">CIRCUITO_APERTO</h3>
+                            <p class="text-[9px] text-white/30 uppercase tracking-widest">Berlin / 1982</p>
+                        </div>
+                        <button class="btn-tech">VIEW</button>
+                    </div>
+                </div>
+
+                <div class="carousel-item w-80 archive-card" onclick="showModal('assets/galery/ds-studio-03.jpeg')">
+                    <div class="img-container aspect-square mb-4">
+                        <img src="assets/galery/ds-studio-03.jpeg" alt="Studio 03">
+                    </div>
+                    <div class="flex justify-between items-end">
+                        <div class="tech-mono">
+                            <h3 class="text-mustard text-xs font-bold uppercase mb-1">OSCILLO_DATA</h3>
+                            <p class="text-[9px] text-white/30 uppercase tracking-widest">Venice / 1979</p>
+                        </div>
+                        <button class="btn-tech">VIEW</button>
+                    </div>
+                </div>
+
+                <div class="carousel-item w-80 archive-card" onclick="showModal('assets/galery/ds-studio-04.png')">
+                    <div class="img-container aspect-square mb-4">
+                        <img src="assets/galery/ds-studio-04.png" alt="Studio 04">
+                    </div>
+                    <div class="flex justify-between items-end">
+                        <div class="tech-mono">
+                            <h3 class="text-mustard text-xs font-bold uppercase mb-1">MODULE_CORE</h3>
+                            <p class="text-[9px] text-white/30 uppercase tracking-widest">Ljubljana / 1976</p>
+                        </div>
+                        <button class="btn-tech">VIEW</button>
+                    </div>
+                </div>
+
+                <div class="carousel-item w-80 archive-card" onclick="showModal('assets/galery/ds-studio-05.jpg')">
+                    <div class="img-container aspect-square mb-4">
+                        <img src="assets/galery/ds-studio-05.jpg" alt="Studio 05">
+                    </div>
+                    <div class="flex justify-between items-end">
+                        <div class="tech-mono">
+                            <h3 class="text-mustard text-xs font-bold uppercase mb-1">FREQ_MOD_SCAN</h3>
+                            <p class="text-[9px] text-white/30 uppercase tracking-widest">Acoustic Lab / 1980</p>
+                        </div>
+                        <button class="btn-tech">VIEW</button>
+                    </div>
+                </div>
+
+                <div class="carousel-item w-80 archive-card" onclick="showModal('assets/galery/ds-studiio-06.png')">
+                    <div class="img-container aspect-square mb-4">
+                        <img src="assets/galery/ds-studiio-06.png" alt="Studio 06">
+                    </div>
+                    <div class="flex justify-between items-end">
+                        <div class="tech-mono">
+                            <h3 class="text-mustard text-xs font-bold uppercase mb-1">TAPE_SATURATION</h3>
+                            <p class="text-[9px] text-white/30 uppercase tracking-widest">Analog Studio / 1974</p>
+                        </div>
+                        <button class="btn-tech">VIEW</button>
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- LIVE -->
+            <div id="live" class="mb-24 px-4">
+                <div class="section-separator">
+                    <span class="section-tag">Live_Signal_Archive</span>
+                </div>
+                <div class="carousel-container no-scrollbar">
+                    <div class="carousel-item w-64 archive-card p-2" onclick="showModal('assets/galery/ds-live-01.png')">
+                        <div class="img-container aspect-square mb-3">
+                            <img src="assets/galery/ds-live-01.png">
+                        </div>
+                        <div class="flex justify-between items-center tech-mono text-[9px]">
+                            <span class="text-mustard">SIGNAL_01</span>
+                            <span class="material-symbols-outlined text-[10px] text-cyan-tech">settings_input_component</span>
+                        </div>
+                    </div>
+                    <div class="carousel-item w-64 archive-card p-2" onclick="showModal('assets/galery/ds-live-09.png')">
+                        <div class="img-container aspect-square mb-3">
+                            <img src="assets/galery/ds-live-09.png">
+                        </div>
+                        <div class="flex justify-between items-center tech-mono text-[9px]">
+                            <span class="text-mustard">STAGE_TRANS</span>
+                            <span class="material-symbols-outlined text-[10px] text-cyan-tech">analytics</span>
+                        </div>
+                    </div>
+                    <div class="carousel-item w-64 archive-card p-2" onclick="showModal('assets/galery/ds-live-02.png')">
+                        <div class="img-container aspect-square mb-3">
+                            <img src="assets/galery/ds-live-02.png">
+                        </div>
+                        <div class="flex justify-between items-center tech-mono text-[9px]">
+                            <span class="text-mustard">VOID_SCAN</span>
+                            <span class="material-symbols-outlined text-[10px] text-cyan-tech">sensors</span>
+                        </div>
+                    </div>
+                    <div class="carousel-item w-64 archive-card p-2" onclick="showModal('assets/galery/ds-live-03.jpg')">
+                        <div class="img-container aspect-square mb-3">
+                            <img src="assets/galery/ds-live-03.jpg">
+                        </div>
+                        <div class="flex justify-between items-center tech-mono text-[9px]">
+                            <span class="text-mustard">CROWD_MASS</span>
+                            <span class="material-symbols-outlined text-[10px] text-cyan-tech">hub</span>
+                        </div>
+                    </div>
+                    <div class="carousel-item w-64 archive-card p-2" onclick="showModal('assets/galery/ds-live-04.jpg')">
+                        <div class="img-container aspect-square mb-3">
+                            <img src="assets/galery/ds-live-04.jpg">
+                        </div>
+                        <div class="flex justify-between items-center tech-mono text-[9px]">
+                            <span class="text-mustard">PULSE_WAVE</span>
+                            <span class="material-symbols-outlined text-[10px] text-cyan-tech">waves</span>
+                        </div>
+                    </div>
+                    <div class="carousel-item w-64 archive-card p-2" onclick="showModal('assets/galery/ds-live-05.png')">
+                        <div class="img-container aspect-square mb-3">
+                            <img src="assets/galery/ds-live-05.png">
+                        </div>
+                        <div class="flex justify-between items-center tech-mono text-[9px]">
+                            <span class="text-mustard">LIVE_FEED_01</span>
+                            <span class="material-symbols-outlined text-[10px] text-cyan-tech">videocam</span>
+                        </div>
+                    </div>
+                    <div class="carousel-item w-64 archive-card p-2" onclick="showModal('assets/galery/ds-live-06.png')">
+                        <div class="img-container aspect-square mb-3">
+                            <img src="assets/galery/ds-live-06.png">
+                        </div>
+                        <div class="flex justify-between items-center tech-mono text-[9px]">
+                            <span class="text-mustard">STROBE_SYNC</span>
+                            <span class="material-symbols-outlined text-[10px] text-cyan-tech">light_mode</span>
+                        </div>
+                    </div>
+                    <div class="carousel-item w-64 archive-card p-2" onclick="showModal('assets/galery/ds-live-07.jpg')">
+                        <div class="img-container aspect-square mb-3">
+                            <img src="assets/galery/ds-live-07.jpg">
+                        </div>
+                        <div class="flex justify-between items-center tech-mono text-[9px]">
+                            <span class="text-mustard">DATA_LOG_LIVE</span>
+                            <span class="material-symbols-outlined text-[10px] text-cyan-tech">terminal</span>
+                        </div>
+                    </div>
+                    <div class="carousel-item w-64 archive-card p-2" onclick="showModal('assets/galery/ds-live-08.png')">
+                        <div class="img-container aspect-square mb-3">
+                            <img src="assets/galery/ds-live-08.png">
+                        </div>
+                        <div class="flex justify-between items-center tech-mono text-[9px]">
+                            <span class="text-mustard">SIGNAL_PEAK</span>
+                            <span class="material-symbols-outlined text-[10px] text-cyan-tech">equalizer</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CITY PICTURES -->
+            <div id="city-pictures" class="mb-24">
+                <div class="section-separator">
+                    <span class="section-tag">Tour_Log_archives</span>
+                </div>
+                <div class="carousel-container no-scrollbar">
+                    <div class="carousel-item w-96 group cursor-pointer" onclick="showModal('assets/galery/ds-tours-01.png')">
+                        <div class="img-container aspect-video mb-6">
+                            <img src="assets/galery/ds-tours-01.png">
+                        </div>
+                        <div>
+                            <span class="tech-mono text-[9px] text-white/40 uppercase mb-2 block">CAPTURE: 03C_1975</span>
+                            <p class="text-[11px] text-white/50 leading-relaxed max-w-xs">
+                                Coimbra. 1976
+                            </p>
+                        </div>
                     </div>
 
-                    <div class="break-inside-avoid photo-frame-dark group cursor-pointer overflow-hidden reveal"
-                        onclick="showModal('assets/galery/ds-archive-03.jpg')">
-                        <img src="assets/galery/ds-archive-03.jpg" class="w-full h-auto archive-photo"
-                            alt="DreamSequence Archive 03">
-                    </div>
-                    <div class="break-inside-avoid photo-frame-dark group cursor-pointer overflow-hidden reveal"
-                        onclick="showModal('assets/galery/ds-archive-04.jpg')">
-                        <img src="assets/galery/ds-archive-04.jpg" class="w-full h-auto archive-photo"
-                            alt="DreamSequence Archive 04">
-                    </div>
-                    <div class="break-inside-avoid photo-frame-dark group cursor-pointer overflow-hidden reveal"
-                        onclick="showModal('assets/galery/ds-archive-05.jpg')">
-                        <img src="assets/galery/ds-archive-05.jpg" class="w-full h-auto archive-photo"
-                            alt="DreamSequence Archive 05">
-                    </div>
-                    <div class="break-inside-avoid photo-frame-dark group cursor-pointer overflow-hidden reveal"
-                        onclick="showModal('assets/galery/ds-archive-06.jpg')">
-                        <img src="assets/galery/ds-archive-06.jpg" class="w-full h-auto archive-photo"
-                            alt="DreamSequence Archive 06">
-                    </div>
-                    <div class="break-inside-avoid photo-frame-dark group cursor-pointer overflow-hidden reveal"
-                        onclick="showModal('assets/galery/ds-archive-07.jpg')">
-                        <img src="assets/galery/ds-archive-07.jpg" class="w-full h-auto archive-photo"
-                            alt="DreamSequence Archive 07">
-                    </div>
-                    <div class="break-inside-avoid photo-frame-dark group cursor-pointer overflow-hidden reveal"
-                        onclick="showModal('assets/galery/ds-archive-08.jpg')">
-                        <img src="assets/galery/ds-archive-08.jpg" class="w-full h-auto archive-photo"
-                            alt="DreamSequence Archive 08">
-                    </div>
-                    <div class="break-inside-avoid photo-frame-dark group cursor-pointer overflow-hidden reveal"
-                        onclick="showModal('assets/galery/ds-archive-09.png')">
-                        <img src="assets/galery/ds-archive-09.png" class="w-full h-auto archive-photo"
-                            alt="DreamSequence Archive 09">
-                    </div>
-                    <div class="break-inside-avoid photo-frame-dark group cursor-pointer overflow-hidden reveal"
-                        onclick="showModal('assets/galery/ds-archive-10.png')">
-                        <img src="assets/galery/ds-archive-10.png" class="w-full h-auto archive-photo"
-                            alt="DreamSequence Archive 10">
+                    <div class="carousel-item w-96 group cursor-pointer" onclick="showModal('assets/galery/ds-tours-02.jpg')">
+                        <div class="img-container aspect-video mb-6">
+                            <img src="assets/galery/ds-tours-02.jpg">
+                        </div>
+                        <div>
+                            <span class="tech-mono text-[9px] text-white/40 uppercase mb-2 block">CAPTURE: 01A_1977</span>
+                            <p class="text-[11px] text-white/50 leading-relaxed max-w-xs">
+                                New York 1978
+                            </p>
+                        </div>
                     </div>
 
-                    <!-- Gallery Items (11-20) -->
-                    
-                    
-                    <div class="break-inside-avoid photo-frame-dark group cursor-pointer overflow-hidden reveal"
-                        onclick="showModal('assets/galery/ds-archive-14.png')">
-                        <img src="assets/galery/ds-archive-14.png" class="w-full h-auto archive-photo"
-                            alt="DreamSequence Archive 14">
-                    </div>
-                    <div class="break-inside-avoid photo-frame-dark group cursor-pointer overflow-hidden reveal"
-                        onclick="showModal('assets/galery/ds-archive-15.jpg')">
-                        <img src="assets/galery/ds-archive-15.jpg" class="w-full h-auto archive-photo"
-                            alt="DreamSequence Archive 15">
-                    </div>
-                    <div class="break-inside-avoid photo-frame-dark group cursor-pointer overflow-hidden reveal"
-                        onclick="showModal('assets/galery/ds-archive-16.jpg')">
-                        <img src="assets/galery/ds-archive-16.jpg" class="w-full h-auto archive-photo"
-                            alt="DreamSequence Archive 16">
-                    </div>
-                    <div class="break-inside-avoid photo-frame-dark group cursor-pointer overflow-hidden reveal"
-                        onclick="showModal('assets/galery/ds-archive-17.jpg')">
-                        <img src="assets/galery/ds-archive-17.jpg" class="w-full h-auto archive-photo"
-                            alt="DreamSequence Archive 17">
-                    </div>
-                    <div class="break-inside-avoid photo-frame-dark group cursor-pointer overflow-hidden reveal"
-                        onclick="showModal('assets/galery/ds-archive-18.jpg')">
-                        <img src="assets/galery/ds-archive-18.jpg" class="w-full h-auto archive-photo"
-                            alt="DreamSequence Archive 18">
+                    <div class="carousel-item w-96 group cursor-pointer" onclick="showModal('assets/galery/ds-tours-03.jpg')">
+                        <div class="img-container aspect-video mb-6">
+                            <img src="assets/galery/ds-tours-03.jpg">
+                        </div>
+                        <div>
+                            <span class="tech-mono text-[9px] text-white/40 uppercase mb-2 block">CAPTURE: 02B_1978</span>
+                            <p class="text-[11px] text-white/50 leading-relaxed max-w-xs">
+                                Visual light patterns recorded on transit. Exposure 4.5s.
+                            </p>
+                        </div>
                     </div>
 
-
-
-                    <!-- Gallery Items (21-28) -->
-                    <div class="break-inside-avoid photo-frame-dark group cursor-pointer overflow-hidden reveal"
-                        onclick="showModal('assets/galery/ds-archive-21.png')">
-                        <img src="assets/galery/ds-archive-21.png" class="w-full h-auto archive-photo"
-                            alt="DreamSequence Archive 21">
-                    </div>
-                    
-                    <div class="break-inside-avoid photo-frame-dark group cursor-pointer overflow-hidden reveal"
-                        onclick="showModal('assets/galery/ds-archive-23.png')">
-                        <img src="assets/galery/ds-archive-23.png" class="w-full h-auto archive-photo"
-                            alt="DreamSequence Archive 23">
-                    </div>
-                    <div class="break-inside-avoid photo-frame-dark group cursor-pointer overflow-hidden reveal"
-                        onclick="showModal('assets/galery/ds-archive-24.jpg')">
-                        <img src="assets/galery/ds-archive-24.jpg" class="w-full h-auto archive-photo"
-                            alt="DreamSequence Archive 24">
-                    </div>
-                    <div class="break-inside-avoid photo-frame-dark group cursor-pointer overflow-hidden reveal"
-                        onclick="showModal('assets/galery/ds-archive-25.png')">
-                        <img src="assets/galery/ds-archive-25.png" class="w-full h-auto archive-photo"
-                            alt="DreamSequence Archive 25">
+                    <div class="carousel-item w-96 group cursor-pointer" onclick="showModal('assets/galery/ds-tours-04.png')">
+                        <div class="img-container aspect-video mb-6">
+                            <img src="assets/galery/ds-tours-04.png">
+                        </div>
+                        <div>
+                            <span class="tech-mono text-[9px] text-white/40 uppercase mb-2 block">CAPTURE: 04D_1976</span>
+                            <p class="text-[11px] text-white/50 leading-relaxed max-w-xs">
+                                La Gomera. Canary Islands. 1976
+                            </p>
+                        </div>
                     </div>
 
-                    <div class="break-inside-avoid photo-frame-dark group cursor-pointer overflow-hidden reveal"
-                        onclick="showModal('assets/galery/ds-archive-27.jpg')">
-                        <img src="assets/galery/ds-archive-27.jpg" class="w-full h-auto archive-photo"
-                            alt="DreamSequence Archive 27">
+                    <div class="carousel-item w-96 group cursor-pointer" onclick="showModal('assets/galery/ds-tours-05.jpg')">
+                        <div class="img-container aspect-video mb-6">
+                            <img src="assets/galery/ds-tours-05.jpg">
+                        </div>
+                        <div>
+                            <span class="tech-mono text-[9px] text-white/40 uppercase mb-2 block">CAPTURE: 05E_1976</span>
+                            <p class="text-[12px] text-white/50 leading-relaxed max-w-xs">
+                                Atonium, Brussels. 1976
+                            </p>
+                        </div>
                     </div>
+                </div>
+            </div>
 
-                    <div class="break-inside-avoid photo-frame-dark group cursor-pointer overflow-hidden reveal"
-                        onclick="showModal('assets/galery/ds-archive-29.jpg')">
-                        <img src="assets/galery/ds-archive-29.jpg" class="w-full h-auto archive-photo"
-                            alt="DreamSequence Archive 29">
+            <!-- ARCHIVE -->
+            <div id="archive" class="mb-24 px-4">
+                <div class="section-separator">
+                    <span class="section-tag">Archive_Data_Buffer</span>
+                </div>
+                <div class="carousel-container no-scrollbar">
+                    <div class="carousel-item w-64 archive-card p-2" onclick="showModal('assets/galery/ds-archive-01.jpeg')">
+                        <div class="img-container aspect-square mb-3">
+                            <img src="assets/galery/ds-archive-01.jpeg">
+                        </div>
+                        <div class="flex justify-between items-center tech-mono text-[9px]">
+                            <span class="text-mustard">MEM_ARCH_01</span>
+                            <span class="material-symbols-outlined text-[10px] text-cyan-tech">folder_open</span>
+                        </div>
                     </div>
-                   </div>
+                    <div class="carousel-item w-64 archive-card p-2" onclick="showModal('assets/galery/ds-archive-04.jpg')">
+                        <div class="img-container aspect-square mb-3">
+                            <img src="assets/galery/ds-archive-04.jpg">
+                        </div>
+                        <div class="flex justify-between items-center tech-mono text-[9px]">
+                            <span class="text-mustard">MEM_ARCH_04</span>
+                            <span class="material-symbols-outlined text-[10px] text-cyan-tech">inventory_2</span>
+                        </div>
+                    </div>
+                    <div class="carousel-item w-64 archive-card p-2" onclick="showModal('assets/galery/ds-archive-03.jpeg')">
+                        <div class="img-container aspect-square mb-3">
+                            <img src="assets/galery/ds-archive-03.jpeg">
+                        </div>
+                        <div class="flex justify-between items-center tech-mono text-[9px]">
+                            <span class="text-mustard">MEM_ARCH_03</span>
+                            <span class="material-symbols-outlined text-[10px] text-cyan-tech">history_edu</span>
+                        </div>
+                    </div>
+                    <div class="carousel-item w-64 archive-card p-2" onclick="showModal('assets/galery/ds-archive-02.jpg')">
+                        <div class="img-container aspect-square mb-3">
+                            <img src="assets/galery/ds-archive-02.jpg">
+                        </div>
+                        <div class="flex justify-between items-center tech-mono text-[9px]">
+                            <span class="text-mustard">MEM_ARCH_02</span>
+                            <span class="material-symbols-outlined text-[10px] text-cyan-tech">description</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
-                <div class="mt-24 text-center">
-                    <p class="text-[#a1887f] uppercase tracking-[0.2em] text-xs">End of archive file.</p>
+            <div class="py-24 text-center">
+                <div class="inline-flex items-center gap-4 px-8 py-3 hud-border tech-mono text-[10px] text-white/40">
+                    <span class="material-symbols-outlined text-xs">lock</span>
+                    END_OF_GRANTED_ACCESS_FILE
+                    <span class="material-symbols-outlined text-xs">key</span>
                 </div>
             </div>
         </main>
 
-        <div id="main-footer"></div>
+        <footer>
+            <div id="main-footer"></div>
+        </footer>
+    </div>
+
+    <!-- Modal for viewing full image -->
+    <div id="imageModal"
+        class="fixed inset-0 z-[150] flex items-center justify-center bg-black/95 opacity-0 pointer-events-none transition-all duration-500 backdrop-blur-md">
+        <button onclick="closeModal()" class="absolute top-12 right-12 text-mustard hover:text-white transition-colors">
+            <span class="material-symbols-outlined text-5xl font-light">close</span>
+        </button>
+        <div class="max-w-[85vw] max-h-[80vh] relative p-1 bg-white/5 border border-white/10">
+            <img id="modalImage" src="" class="max-w-full max-h-[80vh] object-contain">
+            <div class="absolute -bottom-10 left-0 w-full text-center">
+                <span id="modalCaption" class="tech-mono text-[10px] text-cyan-tech uppercase tracking-[0.4em]"></span>
+            </div>
+        </div>
     </div>
 
     <script src="components.js"></script>
+    <script>
+        function showModal(src) {
+            const modal = document.getElementById('imageModal');
+            const img = document.getElementById('modalImage');
+            const caption = document.getElementById('modalCaption');
+            img.src = src;
+            const filename = src.split('/').pop().split('.')[0].replace(/-/g, '_');
+            caption.textContent = `DATA_REF: ${filename.toUpperCase()}`;
+            modal.classList.remove('opacity-0', 'pointer-events-none');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeModal() {
+            const modal = document.getElementById('imageModal');
+            modal.classList.add('opacity-0', 'pointer-events-none');
+            document.body.style.overflow = 'auto';
+        }
+
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') closeModal();
+        });
+    </script>
 </body>
 
 </html>
