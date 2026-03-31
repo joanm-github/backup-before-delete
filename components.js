@@ -172,7 +172,7 @@ const Footer = () => `
             
             <!-- Partner Logo -->
             <div class="flex items-center ml-4">
-                <img src="assets/logos/suoni_rari_color.png" alt="Suoni Rari" class="h-8 md:h-12 w-auto transition-all">
+                <img src="./assets/logos/suoni_rari_color.png" alt="Suoni Rari" class="h-8 md:h-12 w-auto transition-all">
             </div>
         </div>
 

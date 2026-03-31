@@ -146,7 +146,7 @@
                         </div>
                         <div class="flex flex-col items-end gap-2">
                             <span class="font-black text-accent text-2xl tracking-tighter">${item.price}€</span>
-                            <button onclick="removeFromCart(${idx})" class="text-burnt-orange opacity-40 hover:opacity-100 transition-opacity flex items-center gap-1" title="Eliminar Transmisión">
+                            <button onclick="removeFromCart(${idx})" class="text-burnt-orange opacity-40 hover:opacity-100 transition-opacity flex items-center gap-1" title="Remove Transmission">
                                 <span class="material-symbols-outlined text-xs">close</span>
                                 <span class="text-[10px] font-mono uppercase font-bold">Purge</span>
                             </button>
@@ -159,7 +159,7 @@
 
             form.addEventListener('submit', (e) => {
                 e.preventDefault();
-                alert("ÉXITO: ¡Señal de Pago Transmitida!\n\nTus artefactos cósmicos están siendo preparados. Revisa tu correo para la confirmación.");
+                alert("SUCCESS: Payment Signal Transmitted!\n\nYour cosmic artifacts are being prepared. Check your email for confirmation.");
                 localStorage.removeItem('ds-cart');
                 window.location.href = 'index.html';
             });
