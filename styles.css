@@ -585,3 +585,50 @@ h1 {
     flex: 0 0 auto;
     scroll-snap-align: start;
 }
+.carousel-wrapper {
+    position: relative;
+    width: 100%;
+}
+
+.carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 40px;
+    height: 40px;
+    background: rgba(10, 10, 10, 0.7);
+    border: 1px solid rgba(214, 158, 46, 0.3);
+    color: #eab308;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 10;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(4px);
+    border-radius: 4px;
+}
+
+.carousel-btn:hover {
+    background: rgba(214, 158, 46, 0.2);
+    border-color: #eab308;
+    box-shadow: 0 0 15px rgba(234, 179, 8, 0.3);
+}
+
+@media (min-width: 768px) {
+    .carousel-wrapper:hover .carousel-btn {
+        display: flex;
+    }
+}
+
+.carousel-btn.btn-left {
+    left: -20px;
+}
+
+.carousel-btn.btn-right {
+    right: -20px;
+}
+
+.carousel-btn .material-symbols-outlined {
+    font-size: 24px;
+}
