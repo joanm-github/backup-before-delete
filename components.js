@@ -157,7 +157,7 @@ const initOscilloscope = () => {
 
 
 const Footer = () => `
-<footer class="mt-auto border-t border-mustard/10 bg-background-dark py-8 px-6 mb-24 md:mb-0 reveal">
+<footer class="mt-auto border-t border-mustard/10 bg-background-dark py-8 px-6 mb-24 md:mb-0 reveal relative">
     <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
         <div class="flex flex-col md:flex-row items-center gap-6">
             <a href="index.html" class="flex items-center gap-4 group">
@@ -177,8 +177,8 @@ const Footer = () => `
         </div>
 
         <!-- Rights & Terminal -->
-        <div class="flex flex-col items-center gap-4">
-            <p class="text-[9px] text-tobacco/40 uppercase tracking-[0.3em] font-mono">
+        <div class="md:absolute md:left-1/2 md:-translate-x-1/2 flex flex-col items-center">
+            <p class="text-[9px] text-tobacco/40 uppercase tracking-[0.3em] font-mono whitespace-nowrap">
                 © 2024 DreamSequence Archives • Terminal DS-72
             </p>
         </div>
