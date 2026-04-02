@@ -173,9 +173,9 @@ const Footer = () => `
             <!-- Partner Logos -->
             <div class="flex items-center gap-2 ml-4">
                 <img src="./assets/logos/suoni_rari_color.png" alt="Suoni Rari" class="h-8 md:h-12 w-auto transition-all">
-                <a href="https://animanera.net/" target="_blank" class="flex items-center group -translate-y-2 mix-blend-screen">
-                    <img src="./assets/logos/anima_nera.png" alt="Anima Nera" class="h-24 md:h-32 w-auto opacity-80 group-hover:opacity-100 transition-all">
-                </a>
+                <div class="flex items-center -translate-y-2 mix-blend-screen">
+                    <img src="./assets/logos/anima_nera.png" alt="Anima Nera" class="h-24 md:h-32 w-auto opacity-80">
+                </div>
             </div>
         </div>
 
