@@ -19,8 +19,9 @@
 
 <body
     class="bg-background-light dark:bg-background-dark text-tobacco dark:text-[#f3e5ab] font-display overflow-x-hidden">
-    <div class="layout-container flex h-full grow flex-col">
-        <div id="main-header"></div>
+    <div class="relative flex min-h-screen w-full flex-col group/design-root">
+        <div class="layout-container flex h-full grow flex-col">
+            <div id="main-header"></div>
 
         <main class="flex-1 py-12 px-6">
             <div class="max-w-5xl mx-auto">
@@ -527,16 +528,15 @@
                                     class="mt-8 md:mt-0 px-10 py-3 border border-mustard/30 text-mustard uppercase font-black text-xs tracking-[0.2em] hover:bg-mustard hover:text-background-dark transition-all duration-300">View
                                     Archive</button>
                             </div>
+
                         </div>
                     </section>
                 </div>
-            </div>
-        </main>
+            </main>
+            <div id="main-footer"></div>
+        </div>
 
-        <div id="main-footer"></div>
-    </div>
-
-    <script src="components.js?v=2.0"></script>
-</body>
+        <script src="components.js"></script>
+    </body>
 
 </html>

@@ -307,7 +307,8 @@ const ALBUM_LINKS = {
     'Triestina': 'https://dreamsequence3.bandcamp.com/album/cosmonautica-triestina',
     'ICA London': 'https://dreamsequence3.bandcamp.com/album/live-at-the-ica',
     'KS Session': 'https://dreamsequence3.bandcamp.com/album/ks-session',
-    'Rozzol Pulse': 'https://dreamsequence3.bandcamp.com/album/rozzol-pulse'
+    'Rozzol Pulse': 'https://dreamsequence3.bandcamp.com/album/rozzol-pulse',
+    'Kyoto': 'https://dreamsequence3.bandcamp.com/album/kyoto-1980'
 };
 
 window.playAlbum = (title) => {
