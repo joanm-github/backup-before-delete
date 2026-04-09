@@ -105,6 +105,11 @@ const initOscilloscope = () => {
         scrollIntensity = window.scrollY * 0.001;
     });
 
+    let spike = 0;
+    window.addEventListener('mousedown', () => {
+        spike = 40;
+    });
+
     // Track mouse for frequency modulation
     window.addEventListener('mousemove', (e) => {
         mouseX = e.clientX / window.innerWidth;
@@ -134,8 +139,8 @@ const initOscilloscope = () => {
             const freq1 = 0.01 + (mouseX * 0.03);
             const freq2 = 0.04 + (scrollIntensity * 0.05);
 
-            const amp1 = 10 + (scrollIntensity * 20);
-            const amp2 = 5 + (mouseX * 15);
+            const amp1 = 10 + (scrollIntensity * 20) + spike;
+            const amp2 = 5 + (mouseX * 15) + (spike / 2);
 
             const y = height / 2 +
                 Math.sin(x * freq1 + offset) * amp1 +
@@ -145,6 +150,7 @@ const initOscilloscope = () => {
 
         ctx.stroke();
         offset += 0.05 + (scrollIntensity * 0.1);
+        if (spike > 0) spike *= 0.9;
         requestAnimationFrame(draw);
     };
 
@@ -229,20 +235,6 @@ const initScrollReveal = () => {
 
 // Injection Logic
 document.addEventListener('DOMContentLoaded', () => {
-    /* CRT and Noise layers disabled per user request for clarity */
-    /*
-    if (!document.querySelector('.analog-noise')) {
-        const noise = document.createElement('div');
-        noise.className = 'analog-noise';
-        document.body.appendChild(noise);
-    }
-    if (!document.querySelector('.crt-scanlines')) {
-        const scanlines = document.createElement('div');
-        scanlines.className = 'crt-scanlines';
-        document.body.appendChild(scanlines);
-    }
-    */
-
     const headerEl = document.getElementById('main-header');
     if (headerEl) {
         headerEl.innerHTML = Header();
@@ -314,7 +306,14 @@ const ALBUM_LINKS = {
 window.playAlbum = (title) => {
     const url = ALBUM_LINKS[title];
     if (url) {
-        window.open(url, '_blank');
+        // Visual feedback for "tape load"
+        const overlay = document.querySelector('.crt-overlay');
+        if (overlay) {
+            overlay.style.animationDuration = '0.05s';
+            setTimeout(() => overlay.style.animationDuration = '0.15s', 500);
+        }
+        showToast(`TRANSMISSION_START: ${title.toUpperCase()}...`);
+        setTimeout(() => window.open(url, '_blank'), 600);
     } else {
         showToast(`'${title}' is not available yet`);
     }
@@ -394,6 +393,72 @@ window.toggleMobileMenu = () => {
         }
     }
 };
+
+// Gallery Rendering Engine
+window.loadGallery = async (dataUrl) => {
+    try {
+        let data;
+        // Fallback for local file access (bypass CORS)
+        if (window.GALLERY_DATA) {
+            data = window.GALLERY_DATA;
+        } else {
+            const response = await fetch(dataUrl);
+            data = await response.json();
+        }
+        
+        renderCarousel('laboratory-carousel', data.laboratory, 'lab');
+        renderCarousel('carousel-live', data.live, 'live');
+        renderCarousel('carousel-cities', data.city, 'city');
+        renderCarousel('carousel-archive', data.archive || [], 'arch');
+        
+        // Re-init buttons after rendering
+        setTimeout(initCarousels, 150);
+    } catch (err) {
+        console.error('Archive Data Load Error:', err);
+    }
+};
+
+function renderCarousel(id, items, type) {
+    const container = document.getElementById(id);
+    if (!container || !items.length) return;
+    
+    container.innerHTML = items.map(item => {
+        if (type === 'city') {
+            return `
+                <div class="carousel-item w-96 group cursor-pointer" onclick="showModal('${item.src}')">
+                    <div class="img-container aspect-video mb-6 overflow-hidden">
+                        <img loading="lazy" src="${item.src}" class="w-full h-full object-cover" width="${item.w}" height="${item.h}">
+                    </div>
+                    <div>
+                        <span class="tech-mono text-[9px] text-white/40 uppercase mb-2 block">CAPTURE: ${item.alt.toUpperCase()}</span>
+                        <p class="text-[11px] text-white/50 leading-relaxed max-w-xs">${item.desc || item.alt}</p>
+                    </div>
+                </div>`;
+        }
+        
+        const cardClass = type === 'lab' ? 'w-80' : 'w-64';
+        const innerContent = type === 'lab' ? `
+            <div class="flex justify-between items-end">
+                <div class="tech-mono">
+                    <h3 class="text-mustard text-xs font-bold uppercase mb-1"></h3>
+                    <p class="text-[9px] text-white/30 uppercase tracking-widest"></p>
+                </div>
+                <button class="btn-tech">VIEW</button>
+            </div>` : `
+            <div class="flex justify-between items-center tech-mono text-[9px]">
+                <span class="text-mustard">${item.alt.toUpperCase()}</span>
+                <span class="material-symbols-outlined text-[10px] text-cyan-tech">sensors</span>
+            </div>`;
+
+        return `
+            <div class="carousel-item ${cardClass} archive-card p-2" onclick="showModal('${item.src}')">
+                <div class="img-container aspect-square mb-3">
+                    <img loading="lazy" src="${item.src}" width="${item.w}" height="${item.h}">
+                </div>
+                ${innerContent}
+            </div>`;
+    }).join('');
+}
 
 // Protect Images from right-click
 document.addEventListener('contextmenu', (e) => {
