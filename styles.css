@@ -587,24 +587,38 @@ h1 {
     margin-right: 8px;
 }
 
+:focus-visible {
+    outline: none;
+    box-shadow: 0 0 0 2px #e67e22;
+}
+
 .archive-card {
-    background: rgba(10, 10, 10, 0.8);
-    border: 1px solid rgba(255, 255, 255, 0.05);
+    background: rgba(18, 18, 18, 0.85);
+    border: 1px solid rgba(214, 158, 46, 0.15);
     padding: 12px;
-    transition: all 0.4s ease;
+    transition: transform 0.15s ease, border-color 0.4s ease, box-shadow 0.4s ease;
     cursor: pointer;
 }
 
 .archive-card:hover {
     border-color: #cca73d;
-    box-shadow: 0 0 30px rgba(204, 167, 61, 0.1);
+    box-shadow: 0 0 30px rgba(204, 167, 61, 0.15);
+}
+
+.archive-card:active {
+    transform: scale(0.98);
+}
+
+.archive-card:focus-visible {
+    outline: none;
+    box-shadow: 0 0 0 2px #e67e22, 0 0 20px rgba(230, 126, 34, 0.3);
 }
 
 .img-container {
     position: relative;
-    background: #000;
+    background: #121212;
     overflow: hidden;
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(214, 158, 46, 0.15);
 }
 
 .img-container img {
@@ -624,22 +638,36 @@ h1 {
 
 .btn-tech {
     font-family: 'Space Mono', monospace;
-    font-size: 10px;
-    color: #00ffee;
-    border: 1px solid rgba(0, 255, 238, 0.3);
-    padding: 2px 8px;
+    font-size: 11px;
+    color: #f3e5ab;
+    background: rgba(214, 158, 46, 0.08);
+    border: 1px solid rgba(214, 158, 46, 0.35);
+    padding: 3px 10px;
     text-transform: uppercase;
-    letter-spacing: 0.1em;
-    transition: all 0.3s ease;
+    letter-spacing: 0.15em;
+    border-radius: 2px;
+    transition: transform 0.15s ease, background 0.3s ease, border-color 0.3s ease, color 0.3s ease;
+    cursor: pointer;
 }
 
 .btn-tech:hover {
-    background: rgba(0, 255, 238, 0.1);
-    border-color: #00ffee;
+    background: rgba(214, 158, 46, 0.2);
+    border-color: #f3e5ab;
+    color: #ffffff;
+    box-shadow: 0 0 12px rgba(214, 158, 46, 0.25);
+}
+
+.btn-tech:active {
+    transform: scale(0.95);
+}
+
+.btn-tech:focus-visible {
+    outline: none;
+    box-shadow: 0 0 0 2px #e67e22;
 }
 
 .section-separator {
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    border-top: 1px solid rgba(214, 158, 46, 0.15);
     margin: 4rem 0 2rem 0;
     display: flex;
     justify-content: center;
@@ -651,8 +679,8 @@ h1 {
     margin-top: -10px;
     font-family: 'Space Mono', monospace;
     font-size: 11px;
-    color: #888;
-    letter-spacing: 0.3em;
+    color: #9e9a93;
+    letter-spacing: 0.25em;
     text-transform: uppercase;
 }
 
@@ -709,7 +737,16 @@ h1 {
     background: rgba(214, 158, 46, 0.3);
     border-color: #eab308;
     box-shadow: 0 0 20px rgba(234, 179, 8, 0.4);
-    transform: translateY(-50%) scale(1.1);
+    transform: translateY(-50%) scale(1.08);
+}
+
+.carousel-btn:active {
+    transform: translateY(-50%) scale(0.95);
+}
+
+.carousel-btn:focus-visible {
+    outline: none;
+    box-shadow: 0 0 0 2px #e67e22, 0 0 20px rgba(230, 126, 34, 0.4);
 }
 
 @media (min-width: 768px) {

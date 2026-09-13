@@ -25,7 +25,7 @@ const Header = () => `
         </nav>
 
         <div class="flex items-center gap-3 md:gap-4 lg:hidden">
-            <button class="relative z-[220] text-tobacco dark:text-accent p-2 rounded-md hover:bg-mustard/15 active:scale-90 transition-all flex items-center justify-center cursor-pointer" onclick="toggleMobileMenu()" aria-label="Toggle navigation menu" id="mobile-menu-toggle">
+            <button class="relative z-[220] text-tobacco dark:text-accent p-2 rounded-md hover:bg-mustard/15 active:scale-95 duration-150 focus-visible:ring-2 focus-visible:ring-[#e67e22] focus-visible:outline-none transition-all flex items-center justify-center cursor-pointer" onclick="toggleMobileMenu()" aria-label="Toggle navigation menu" id="mobile-menu-toggle">
                 <span class="material-symbols-outlined text-3xl" id="menu-icon" aria-hidden="true">menu</span>
             </button>
         </div>
@@ -41,20 +41,20 @@ const Header = () => `
         <div class="relative z-[230] flex items-center justify-between px-6 py-4 border-b border-mustard/15 bg-black/40 backdrop-blur-md shrink-0">
             <div class="flex items-center gap-2">
                 <span class="size-2 rounded-full bg-mustard animate-ping"></span>
-                <span class="text-[11px] font-mono text-mustard uppercase tracking-widest">DS-72 Archive Terminal</span>
+                <span class="text-xs font-mono text-mustard uppercase tracking-[0.2em]">DS-72 Archive Terminal</span>
             </div>
-            <button onclick="toggleMobileMenu()" class="text-mustard hover:text-white p-2 rounded-md hover:bg-mustard/15 transition-all flex items-center gap-1.5 active:scale-90 cursor-pointer" aria-label="Close navigation menu">
-                <span class="text-[10px] font-mono uppercase tracking-widest hidden xs:inline">CLOSE</span>
+            <button onclick="toggleMobileMenu()" class="text-mustard hover:text-white p-2 rounded-md hover:bg-mustard/15 transition-all flex items-center gap-1.5 active:scale-95 duration-150 focus-visible:ring-2 focus-visible:ring-[#e67e22] focus-visible:outline-none cursor-pointer" aria-label="Close navigation menu">
+                <span class="text-xs font-mono uppercase tracking-[0.2em] hidden xs:inline">CLOSE</span>
                 <span class="material-symbols-outlined text-2xl" aria-hidden="true">close</span>
             </button>
         </div>
         
         <div class="relative h-full flex flex-col px-8 pt-6 pb-12 safe-area-inset overflow-y-auto">
             <nav class="flex flex-col gap-6">
-                <a class="text-3xl md:text-5xl font-bold uppercase tracking-tight text-mustard hover:text-accent transition-all hover:pl-3 focus:pl-3" href="biography.html" onclick="toggleMobileMenu()">Biography</a>
-                <a class="text-3xl md:text-5xl font-bold uppercase tracking-tight text-mustard hover:text-accent transition-all hover:pl-3 focus:pl-3" href="collection.html" onclick="toggleMobileMenu()">Discography</a>
-                <a class="text-3xl md:text-5xl font-bold uppercase tracking-tight text-mustard hover:text-accent transition-all hover:pl-3 focus:pl-3" href="gallery.html" onclick="toggleMobileMenu()">Gallery</a>
-                <a class="text-3xl md:text-5xl font-bold uppercase tracking-tight text-mustard hover:text-accent transition-all hover:pl-3 focus:pl-3" href="tours.html" onclick="toggleMobileMenu()">Tours</a>
+                <a class="text-3xl md:text-5xl font-bold uppercase tracking-tight text-mustard hover:text-accent transition-all hover:pl-3 focus:pl-3 focus-visible:ring-2 focus-visible:ring-[#e67e22] focus-visible:outline-none rounded-sm" href="biography.html" onclick="toggleMobileMenu()">Biography</a>
+                <a class="text-3xl md:text-5xl font-bold uppercase tracking-tight text-mustard hover:text-accent transition-all hover:pl-3 focus:pl-3 focus-visible:ring-2 focus-visible:ring-[#e67e22] focus-visible:outline-none rounded-sm" href="collection.html" onclick="toggleMobileMenu()">Discography</a>
+                <a class="text-3xl md:text-5xl font-bold uppercase tracking-tight text-mustard hover:text-accent transition-all hover:pl-3 focus:pl-3 focus-visible:ring-2 focus-visible:ring-[#e67e22] focus-visible:outline-none rounded-sm" href="gallery.html" onclick="toggleMobileMenu()">Gallery</a>
+                <a class="text-3xl md:text-5xl font-bold uppercase tracking-tight text-mustard hover:text-accent transition-all hover:pl-3 focus:pl-3 focus-visible:ring-2 focus-visible:ring-[#e67e22] focus-visible:outline-none rounded-sm" href="tours.html" onclick="toggleMobileMenu()">Tours</a>
             </nav>
             
             <div class="mt-auto pt-8 flex flex-col gap-6">
@@ -288,13 +288,13 @@ document.addEventListener('DOMContentLoaded', () => {
         const modalDiv = document.createElement('div');
         modalDiv.innerHTML = `
         <div id="imageModal" class="fixed inset-0 z-[200] hidden items-center justify-center bg-black/98 opacity-0 pointer-events-none transition-all duration-500 backdrop-blur-xl">
-            <button onclick="closeModal()" class="absolute top-8 right-8 md:top-12 md:right-12 text-mustard hover:text-white transition-colors z-[210] p-2" aria-label="Close Modal">
+            <button onclick="closeModal()" class="absolute top-8 right-8 md:top-12 md:right-12 text-mustard hover:text-white transition-colors z-[210] p-2.5 active:scale-95 duration-150 focus-visible:ring-2 focus-visible:ring-[#e67e22] focus-visible:outline-none rounded-full cursor-pointer" aria-label="Close Modal">
                 <span class="material-symbols-outlined text-4xl md:text-5xl font-light" aria-hidden="true">close</span>
             </button>
-            <div class="max-w-[95vw] max-h-[90vh] relative p-1 bg-white/5 border border-white/10 shadow-2xl animate-in zoom-in-95 duration-500">
+            <div class="max-w-[95vw] max-h-[90vh] relative p-1 bg-[#121212] border border-mustard/20 shadow-2xl animate-in zoom-in-95 duration-500">
                 <img id="modalImage" src="" class="max-w-full max-h-[85vh] object-contain shadow-[0_0_50px_rgba(0,0,0,0.8)]">
                 <div class="absolute -bottom-12 left-0 w-full text-center">
-                    <span id="modalCaption" class="tech-mono text-[10px] text-cyan-tech uppercase tracking-[0.4em]"></span>
+                    <span id="modalCaption" class="tech-mono text-xs text-[#f7f5f0]/90 uppercase tracking-[0.2em]"></span>
                 </div>
             </div>
         </div>`;
@@ -510,39 +510,39 @@ function renderCarousel(id, items, type) {
     const newHtml = itemsToRender.map(item => {
         if (type === 'city') {
             return `
-                <div class="carousel-item w-96 group cursor-pointer" onclick="showModal('${item.src}')" role="button" aria-label="View large version of ${item.alt}">
-                    <div class="img-container aspect-video mb-6 overflow-hidden bg-[#0c0c0c]">
-                        <img loading="lazy" src="${item.src}" class="w-full h-full object-cover" width="${item.w || 800}" height="${item.h || 450}" alt="${item.alt || 'City Archive Image'}">
+                <div class="carousel-item w-96 group cursor-pointer" onclick="showModal('${item.src}')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();showModal('${item.src}');}" role="button" tabindex="0" aria-label="View large version of ${item.alt}">
+                    <div class="img-container aspect-video mb-6 overflow-hidden bg-[#121212]">
+                        <img loading="lazy" decoding="async" src="${item.src}" class="w-full h-full object-cover" width="${item.w || 800}" height="${item.h || 450}" alt="${item.alt || 'City Archive Image'}">
                     </div>
                     <div>
-                        <span class="tech-mono text-[9px] text-white/40 uppercase mb-2 block">CAPTURE: ${item.alt.toUpperCase()}</span>
-                        <p class="text-[11px] text-white/50 leading-relaxed max-w-xs">${item.desc || item.alt}</p>
+                        <span class="tech-mono text-xs text-[#f7f5f0]/80 uppercase tracking-[0.2em] mb-2 block">CAPTURE: ${item.alt.toUpperCase()}</span>
+                        <p class="text-xs text-[#9e9a93] leading-relaxed max-w-xs">${item.desc || item.alt}</p>
                     </div>
                 </div>`;
         }
         
         if (type === 'comic') {
             return `
-                <div class="carousel-item w-72 group cursor-pointer" onclick="showModal('${item.src}')" role="button" aria-label="View large version of ${item.alt}">
-                    <div class="img-container aspect-[2/3] mb-3 overflow-hidden bg-[#0c0c0c] rounded-sm photo-frame-dark relative border border-mustard/10 hover:border-mustard/40 transition-all duration-300">
-                        <img loading="lazy" src="${item.src}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" width="${item.w || 682}" height="${item.h || 1024}" alt="${item.alt || 'Comic Cover'}">
+                <div class="carousel-item w-72 group cursor-pointer" onclick="showModal('${item.src}')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();showModal('${item.src}');}" role="button" tabindex="0" aria-label="View large version of ${item.alt}">
+                    <div class="img-container aspect-[2/3] mb-3 overflow-hidden bg-[#121212] rounded-sm photo-frame-dark relative border border-mustard/10 hover:border-mustard/40 transition-all duration-300">
+                        <img loading="lazy" decoding="async" src="${item.src}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" width="${item.w || 682}" height="${item.h || 1024}" alt="${item.alt || 'Comic Cover'}">
                     </div>
                     <div class="tech-mono">
-                        <h3 class="text-mustard text-xs font-bold uppercase mb-1">${item.alt}</h3>
-                        <p class="text-[9px] text-white/40 leading-normal line-clamp-1">${item.desc || ''}</p>
+                        <h3 class="text-mustard text-xs font-bold uppercase mb-1 tracking-wider">${item.alt}</h3>
+                        <p class="text-xs text-[#9e9a93] leading-normal line-clamp-1">${item.desc || ''}</p>
                     </div>
                 </div>`;
         }
 
         if (type === 'arch') {
             return `
-                <div class="carousel-item w-64 archive-card p-2 cursor-pointer" onclick="showModal('${item.src}')" role="button" aria-label="View larger image of ${item.alt}">
-                    <div class="img-container aspect-[3/4] mb-3 bg-[#0c0c0c] overflow-hidden">
-                        <img loading="lazy" src="${item.src}" class="w-full h-full object-cover object-top" width="${item.w || 600}" height="${item.h || 800}" alt="${item.alt || 'Archive item'}">
+                <div class="carousel-item w-64 archive-card p-2 cursor-pointer" onclick="showModal('${item.src}')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();showModal('${item.src}');}" role="button" tabindex="0" aria-label="View larger image of ${item.alt}">
+                    <div class="img-container aspect-[3/4] mb-3 bg-[#121212] overflow-hidden">
+                        <img loading="lazy" decoding="async" src="${item.src}" class="w-full h-full object-cover object-top" width="${item.w || 600}" height="${item.h || 800}" alt="${item.alt || 'Archive item'}">
                     </div>
-                    <div class="flex justify-between items-center tech-mono text-[9px]">
-                        <span class="text-mustard">${item.alt.toUpperCase()}</span>
-                        <span class="material-symbols-outlined text-[10px] text-cyan-tech">sensors</span>
+                    <div class="flex justify-between items-center tech-mono text-xs tracking-[0.2em] uppercase">
+                        <span class="text-mustard font-bold">${item.alt.toUpperCase()}</span>
+                        <span class="material-symbols-outlined text-xs text-burnt-orange">sensors</span>
                     </div>
                 </div>`;
         }
@@ -552,19 +552,19 @@ function renderCarousel(id, items, type) {
             <div class="flex justify-between items-end">
                 <div class="tech-mono">
                     <h3 class="text-mustard text-xs font-bold uppercase mb-1">${item.alt}</h3>
-                    <p class="text-[9px] text-white/30 uppercase tracking-widest">DS_STUDIO_REF_${item.alt.split(' ').pop()}</p>
+                    <p class="text-xs text-[#9e9a93] uppercase tracking-[0.2em]">DS_STUDIO_REF_${item.alt.split(' ').pop()}</p>
                 </div>
                 <button class="btn-tech" aria-label="View technical details for ${item.alt}">VIEW</button>
             </div>` : `
-            <div class="flex justify-between items-center tech-mono text-[9px]">
-                <span class="text-mustard">${item.alt.toUpperCase()}</span>
-                <span class="material-symbols-outlined text-[10px] text-cyan-tech">sensors</span>
+            <div class="flex justify-between items-center tech-mono text-xs tracking-[0.2em] uppercase">
+                <span class="text-mustard font-bold">${item.alt.toUpperCase()}</span>
+                <span class="material-symbols-outlined text-xs text-burnt-orange">sensors</span>
             </div>`;
 
         return `
-            <div class="carousel-item ${cardClass} archive-card p-2" onclick="showModal('${item.src}')" role="button" aria-label="View larger image of ${item.alt}">
-                <div class="img-container aspect-square mb-3 bg-[#0c0c0c] overflow-hidden">
-                    <img loading="lazy" src="${item.src}" class="w-full h-full object-cover" width="${item.w || 600}" height="${item.h || 600}" alt="${item.alt || 'Archive item'}">
+            <div class="carousel-item ${cardClass} archive-card p-2 cursor-pointer" onclick="showModal('${item.src}')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();showModal('${item.src}');}" role="button" tabindex="0" aria-label="View larger image of ${item.alt}">
+                <div class="img-container aspect-square mb-3 bg-[#121212] overflow-hidden">
+                    <img loading="lazy" decoding="async" src="${item.src}" class="w-full h-full object-cover" width="${item.w || 600}" height="${item.h || 600}" alt="${item.alt || 'Archive item'}">
                 </div>
                 ${innerContent}
             </div>`;

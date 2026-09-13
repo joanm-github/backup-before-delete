@@ -70,9 +70,9 @@
             <!-- LABORATORY -->
             <section id="laboratory" class="mb-24 scroll-mt-32 px-4 md:px-0">
                 <div class="flex items-center gap-4 mb-8">
-                    <h2 class="text-[11px] md:text-xs font-bold uppercase text-mustard/60 tracking-[0.3em] shrink-0">
+                    <h2 class="text-xs font-bold uppercase text-mustard/80 font-mono tracking-[0.25em] shrink-0">
                         Laboratory Studies</h2>
-                    <div class="h-px grow bg-mustard/10"></div>
+                    <div class="h-px grow bg-mustard/15"></div>
                 </div>
                 <div class="section-separator mb-8">
                     <span class="section-tag">Laboratory_Studies</span>
@@ -81,51 +81,57 @@
                     <div id="laboratory-carousel" class="carousel-container no-scrollbar">
                         <!-- LCP Optimization: Hardcoded first 3 items -->
                         <div class="carousel-item w-80 archive-card p-2 cursor-pointer"
-                            onclick="showModal('assets/galery/ds-studio-01.jpeg')" role="button"
+                            onclick="showModal('assets/galery/ds-studio-01.jpeg')"
+                            onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();showModal('assets/galery/ds-studio-01.jpeg');}"
+                            role="button" tabindex="0"
                             aria-label="View larger image of Studio 01">
-                            <div class="img-container aspect-square mb-3 bg-[#0c0c0c] overflow-hidden">
+                            <div class="img-container aspect-square mb-3 bg-[#121212] overflow-hidden">
                                 <img src="assets/galery/ds-studio-01.jpeg" class="w-full h-full object-cover"
-                                    width="1028" height="963" alt="Studio 01" fetchpriority="high">
+                                    width="1028" height="963" alt="Studio 01" fetchpriority="high" loading="eager" decoding="sync">
                             </div>
                             <div class="flex justify-between items-end">
                                 <div class="tech-mono">
                                     <h3 class="text-mustard text-xs font-bold uppercase mb-1">Studio 01</h3>
-                                    <p class="text-[9px] text-white/30 uppercase tracking-widest">DS_STUDIO_REF_01</p>
+                                    <p class="text-xs text-[#9e9a93] uppercase tracking-[0.2em]">DS_STUDIO_REF_01</p>
                                 </div>
-                                <button class="btn-tech">VIEW</button>
+                                <button class="btn-tech" aria-label="View technical details for Studio 01">VIEW</button>
                             </div>
                         </div>
                         <div class="carousel-item w-80 archive-card p-2 cursor-pointer"
-                            onclick="showModal('assets/galery/ds-studio-02.jpeg')" role="button"
+                            onclick="showModal('assets/galery/ds-studio-02.jpeg')"
+                            onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();showModal('assets/galery/ds-studio-02.jpeg');}"
+                            role="button" tabindex="0"
                             aria-label="View larger image of Studio 02">
-                            <div class="img-container aspect-square mb-3 bg-[#0c0c0c] overflow-hidden">
+                            <div class="img-container aspect-square mb-3 bg-[#121212] overflow-hidden">
                                 <img src="assets/galery/ds-studio-02.jpeg" class="w-full h-full object-cover"
-                                    width="714" height="1071" alt="Studio 02">
+                                    width="714" height="1071" alt="Studio 02" loading="lazy" decoding="async">
                             </div>
                             <div class="flex justify-between items-end">
                                 <div class="tech-mono">
                                     <h3 class="text-mustard text-xs font-bold uppercase mb-1">Studio 02</h3>
-                                    <p class="text-[9px] text-white/30 uppercase tracking-widest">DS_STUDIO_REF_02</p>
+                                    <p class="text-xs text-[#9e9a93] uppercase tracking-[0.2em]">DS_STUDIO_REF_02</p>
                                 </div>
-                                <button class="btn-tech">VIEW</button>
+                                <button class="btn-tech" aria-label="View technical details for Studio 02">VIEW</button>
                             </div>
                         </div>
                         <div class="carousel-item w-80 archive-card p-2 cursor-pointer"
-                            onclick="showModal('assets/galery/ds-studio-03.jpeg')" role="button"
+                            onclick="showModal('assets/galery/ds-studio-03.jpeg')"
+                            onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();showModal('assets/galery/ds-studio-03.jpeg');}"
+                            role="button" tabindex="0"
                             aria-label="View larger image of Studio 03">
-                            <div class="img-container aspect-square mb-3 bg-[#0c0c0c] overflow-hidden">
+                            <div class="img-container aspect-square mb-3 bg-[#121212] overflow-hidden">
                                 <img src="assets/galery/ds-studio-03.jpeg" class="w-full h-full object-cover"
-                                    width="672" height="896" alt="Studio 03">
+                                    width="672" height="896" alt="Studio 03" loading="lazy" decoding="async">
                             </div>
                             <div class="flex justify-between items-end">
                                 <div class="tech-mono">
                                     <h3 class="text-mustard text-xs font-bold uppercase mb-1">Studio 03</h3>
-                                    <p class="text-[9px] text-white/30 uppercase tracking-widest">DS_STUDIO_REF_03</p>
+                                    <p class="text-xs text-[#9e9a93] uppercase tracking-[0.2em]">DS_STUDIO_REF_03</p>
                                 </div>
-                                <button class="btn-tech">VIEW</button>
+                                <button class="btn-tech" aria-label="View technical details for Studio 03">VIEW</button>
                             </div>
                         </div>
-                        <div class="py-12 text-center w-full tech-mono text-[10px] text-mustard/20 animate-pulse">
+                        <div class="py-12 text-center w-full tech-mono text-xs uppercase tracking-[0.2em] text-mustard/60 animate-pulse">
                             CONNECTING_TO_ARCHIVE_BUFFER...</div>
                     </div>
                     <button class="carousel-btn btn-left" onclick="scrollCarousel('laboratory-carousel', -300)"
@@ -142,9 +148,9 @@
             <!-- LIVE -->
             <section id="live" class="mb-24 scroll-mt-32 px-4 md:px-0">
                 <div class="flex items-center gap-4 mb-8">
-                    <h2 class="text-[11px] md:text-xs font-bold uppercase text-mustard/60 tracking-[0.3em] shrink-0">
+                    <h2 class="text-xs font-bold uppercase text-mustard/80 font-mono tracking-[0.25em] shrink-0">
                         Live Transmissions</h2>
-                    <div class="h-px grow bg-mustard/10"></div>
+                    <div class="h-px grow bg-mustard/15"></div>
                 </div>
                 <div class="section-separator mb-8">
                     <span class="section-tag">Live_Signal_Archive</span>
@@ -165,9 +171,9 @@
             <!-- CITY PICTURES -->
             <section id="city-pictures" class="mb-24 scroll-mt-32 px-4 md:px-0">
                 <div class="flex items-center gap-4 mb-8">
-                    <h2 class="text-[11px] md:text-xs font-bold uppercase text-mustard/60 tracking-[0.3em] shrink-0">
+                    <h2 class="text-xs font-bold uppercase text-mustard/80 font-mono tracking-[0.25em] shrink-0">
                         City Pictures</h2>
-                    <div class="h-px grow bg-mustard/10"></div>
+                    <div class="h-px grow bg-mustard/15"></div>
                 </div>
                 <div class="section-separator mb-8">
                     <span class="section-tag">Tour_Log_archives</span>
@@ -188,9 +194,9 @@
             <!-- ARCHIVE -->
             <section id="archive" class="mb-24 scroll-mt-32 px-4 md:px-0">
                 <div class="flex items-center gap-4 mb-8">
-                    <h2 class="text-[11px] md:text-xs font-bold uppercase text-mustard/60 tracking-[0.3em] shrink-0">
+                    <h2 class="text-xs font-bold uppercase text-mustard/80 font-mono tracking-[0.25em] shrink-0">
                         Archive Data</h2>
-                    <div class="h-px grow bg-mustard/10"></div>
+                    <div class="h-px grow bg-mustard/15"></div>
                 </div>
                 <div class="section-separator mb-8">
                     <span class="section-tag">Archive_Data_Buffer</span>
@@ -211,9 +217,9 @@
             <!-- SEQUENTIAL ART -->
             <section id="sequential-art" class="mb-24 scroll-mt-32 px-4 md:px-0">
                 <div class="flex items-center gap-4 mb-8">
-                    <h2 class="text-[11px] md:text-xs font-bold uppercase text-mustard/60 tracking-[0.3em] shrink-0">
+                    <h2 class="text-xs font-bold uppercase text-mustard/80 font-mono tracking-[0.25em] shrink-0">
                         Sequential Art Archives</h2>
-                    <div class="h-px grow bg-mustard/10"></div>
+                    <div class="h-px grow bg-mustard/15"></div>
                 </div>
                 <div class="section-separator mb-8">
                     <span class="section-tag">Sequential_Art_Archives</span>
@@ -232,10 +238,10 @@
             </section>
 
             <div class="py-24 text-center">
-                <div class="inline-flex items-center gap-4 px-8 py-3 hud-border tech-mono text-[10px] text-white/40">
-                    <span class="material-symbols-outlined text-xs">lock</span>
+                <div class="inline-flex items-center gap-4 px-8 py-3 hud-border tech-mono text-xs uppercase tracking-[0.2em] text-[#f7f5f0]/80">
+                    <span class="material-symbols-outlined text-sm">lock</span>
                     END_OF_GRANTED_ACCESS_FILE
-                    <span class="material-symbols-outlined text-xs">key</span>
+                    <span class="material-symbols-outlined text-sm">key</span>
                 </div>
             </div>
         </main>
